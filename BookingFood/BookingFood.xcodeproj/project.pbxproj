@@ -13,6 +13,7 @@
 		96D26EA828B253610039C705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D26EA628B253610039C705 /* Main.storyboard */; };
 		96D26EAA28B253620039C705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D26EA928B253620039C705 /* Assets.xcassets */; };
 		96D26EAD28B253620039C705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D26EAB28B253620039C705 /* LaunchScreen.storyboard */; };
+		96D26EB728B256430039C705 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 96D26EB628B256430039C705 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		96D26EA928B253620039C705 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96D26EAC28B253620039C705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96D26EAE28B253620039C705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96D26EB628B256430039C705 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		96D26EB828B256630039C705 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +43,8 @@
 		96D26E9428B253610039C705 = {
 			isa = PBXGroup;
 			children = (
+				96D26EB828B256630039C705 /* README.md */,
+				96D26EB628B256430039C705 /* .gitignore */,
 				96D26E9F28B253610039C705 /* BookingFood */,
 				96D26E9E28B253610039C705 /* Products */,
 			);
@@ -125,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D26EB728B256430039C705 /* .gitignore in Resources */,
 				96D26EAD28B253620039C705 /* LaunchScreen.storyboard in Resources */,
 				96D26EAA28B253620039C705 /* Assets.xcassets in Resources */,
 				96D26EA828B253610039C705 /* Main.storyboard in Resources */,
