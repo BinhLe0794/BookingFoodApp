@@ -1,4 +1,4 @@
-namespace BookingAppServer.Models;
+namespace AdminApp.Models;
 
 public class ErrorViewModel
 {
