@@ -1,0 +1,13 @@
+@if( User.Identity.IsAuthenticated )
+{
+    <a asp-action="Index" asp-controller="Account" class="text-bold mx-3">@User.Identity.Name</a>
+    <a asp-action="Logout" asp-controller="Account" class="btn btn-danger">Sign Out</a>
+}
+else
+{
+    <div>
+        <a asp-action="Authentication" asp-controller="Account" class="btn btn-primary">Sign In</a>
+        <a asp-action="Register" asp-controller="Account" class="btn btn-success">Register</a>
+
+    </div>
+}
