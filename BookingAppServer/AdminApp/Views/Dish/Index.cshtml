@@ -1,8 +1,100 @@
-@model dynamic
+@model List<AdminApp.Models.Menu.DishVm>
 
 @{
     ViewBag.Title = "title";
     Layout = "_Layout";
 }
+<div class="card">
+    <a asp-action="CreateAsyncRange">Seed Data</a>
 
-<h2>title</h2>
+    <table class="table" id="data-table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Calories</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <div style="max-height: 100px; max-width: 150px">
+                        <img src="@item.ImageUrl" alt="img" width="150px" height="150px"/>
+                    </div>
+                </td>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Price</td>
+                <td>@item.Calorie</td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts
+{
+    <script type="application/javascript">
+          $(document).ready(function () {
+                            $("#toggleDetail").click(showSearchInput);
+                            $("#btn-search").click(RefreshPage);
+                            $("#keyword").change(RefreshPage);
+             const dataTable = $('#data-table');
+               dataTable.DataTable({
+                  "order": [[ 2, "desc" ]],
+                  "columnDefs": [
+                      { "visible": false, "targets": [6], "searchable": true }
+                  ],
+                stateSave:true ,
+                "pageLength": 10,
+                    searchPanes:{
+                              threshold: 1,
+                              layout: "columns-2",
+                                 cascadePanes: true, // no to TOP after click
+                              viewTotal: true,
+                             initCollapsed: true,
+                              columns: [0,4,5,6],
+                    },
+                  buttons: [                 
+                          {
+                          text: 'Clear',
+                          action: function ( ) {
+                                    // clear state
+                                    let dataTable = $('#data-table');
+                                    let resetTable = dataTable.DataTable();
+                                    resetTable.state.clear();
+                                    // destroy table
+                                    resetTable.destroy();
+                                   window.location.reload();
+                          }
+                      }, 
+                      'excel'
+                      ],
+                  dom: "BPflrtip",
+                  footerCallback: function (row, data, start, end, display) {
+                                  let _dataTable = dataTable.DataTable(); 
+                                  let count =  _dataTable.column(1,{search : "applied"}).data().sum(); 
+                                  let quantitySum = _dataTable.column(2,{search : "applied"}).data().sum(); 
+                                  let totalSum = _dataTable.column(3,{search : "applied"}).data().sum(); 
+                      let pageTotal = _dataTable
+                          .column(0, {search : "applied"})
+                          .data().count();
+                  console.log(`Bản ghi: ${pageTotal}: Số lượng: ${quantitySum} - Tổng: ${totalSum}`);
+                  // Update footer
+                  $("#sumInfo").html('Tổng bản ghi: '+numberWithCommas(pageTotal)+ "&emsp;" + 'Số đơn/Số lượng: ' +count+'/'+ numberWithCommas(quantitySum) + ' (' + formatCurrency(totalSum) + ' total)');
+              },
+              });
+              
+              //
+                      
+          }); // end document
+      </script>
+}

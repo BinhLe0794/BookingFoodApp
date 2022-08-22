@@ -8,22 +8,12 @@ namespace AdminApp.Entities;
 [Table("Orders")]
 public class Order : ITracking
 {
-    [Key]
-    public Guid Id { get; set; }
-    [Required]
-    [DefaultValue(1)]
-    public int Quantity { get; set; }
-    [Required]
-    [DefaultValue(0)]
-    public double Total { get; set; }
+    [Key] public Guid Id { get; set; }
 
-    public ICollection<Dish>? Dishes { get; set; } = null!;
-    
-    [Required]
-    [ForeignKey("AccountId")]
-    public string AccountId { get; set; }
-    
+    [Required] [ForeignKey("AccountId")] public string AccountId { get; set; }
+
     public Account Account { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? ModifiedAt { get; set; }
+    public ICollection<OrderDetail> OrderDetails { get; set; }
 }

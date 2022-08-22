@@ -3,7 +3,6 @@ using AdminApp.Entities.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace AdminApp.Config;
 
@@ -12,7 +11,7 @@ public class ApplicationDbContext : IdentityDbContext<Account>
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {
     }
-    
+
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
     {
         var modified = ChangeTracker.Entries()
@@ -29,6 +28,7 @@ public class ApplicationDbContext : IdentityDbContext<Account>
                 changedOrAddedItem.ModifiedAt = DateTime.Now;
             }
         }
+
         return base.SaveChangesAsync(cancellationToken);
     }
 
@@ -38,10 +38,15 @@ public class ApplicationDbContext : IdentityDbContext<Account>
 
         builder.Entity<IdentityRole>().Property(x => x.Id).HasMaxLength(50).IsUnicode(false);
         builder.Entity<Account>().Property(x => x.Id).HasMaxLength(50).IsUnicode(false);
-        builder.Entity<Dish>().HasOne<Order>(x => x.Order)
-                             .WithMany(x => x.Dishes)
-                             .HasForeignKey(x => x.OrderId);
-        
+
+        builder.Entity<OrderDetail>().HasOne(x => x.Order)
+            .WithMany(x => x.OrderDetails)
+            .HasForeignKey(x => x.OrderId).OnDelete(DeleteBehavior.Cascade);
+
+        builder.Entity<OrderDetail>().HasOne(x => x.Dish)
+            .WithMany(x => x.OrderDetails)
+            .HasForeignKey(x => x.DishId).OnDelete(DeleteBehavior.Cascade);
+
         foreach (var entityType in builder.Model.GetEntityTypes())
         {
             var tableName = entityType.GetTableName();
@@ -51,4 +56,6 @@ public class ApplicationDbContext : IdentityDbContext<Account>
 
     public DbSet<Dish> Dishes { set; get; } = null!;
     public DbSet<Order> Orders { set; get; } = null!;
+
+    public DbSet<OrderDetail> OrderDetails { get; set; } = null!;
 }

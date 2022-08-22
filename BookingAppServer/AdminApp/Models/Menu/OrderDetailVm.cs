@@ -1,9 +1,8 @@
-using AdminApp.Entities;
 using AdminApp.Models.Enums;
 
 namespace AdminApp.Models.Menu;
 
-public class DishVm
+public class OrderDetailVm
 {
     public string Id { get; set; }
 
@@ -19,7 +18,7 @@ public class DishVm
 
     public string ImageUrl { get; set; } = string.Empty;
 
-    public DateTime CreatedAt { get; set; }
+    public int Quantity { get; set; }
 
-    public DateTime? ModifiedAt { get; set; }
+    public double Total { get; set; }
 }
