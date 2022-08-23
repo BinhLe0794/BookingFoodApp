@@ -14,6 +14,7 @@
 		96D26EAA28B253620039C705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D26EA928B253620039C705 /* Assets.xcassets */; };
 		96D26EAD28B253620039C705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D26EAB28B253620039C705 /* LaunchScreen.storyboard */; };
 		96D26EB728B256430039C705 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 96D26EB628B256430039C705 /* .gitignore */; };
+		9ED67A51E0E2F4E1304EFA5C /* Pods_BookingFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCC6565642D778DAAF0FF7 /* Pods_BookingFood.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,9 @@
 		96D26EAE28B253620039C705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96D26EB628B256430039C705 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		96D26EB828B256630039C705 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AECCC6565642D778DAAF0FF7 /* Pods_BookingFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookingFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1E718D7ECD791D7DF0A28E8 /* Pods-BookingFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookingFood.release.xcconfig"; path = "Target Support Files/Pods-BookingFood/Pods-BookingFood.release.xcconfig"; sourceTree = "<group>"; };
+		E6058C7F32A8D78D95756146 /* Pods-BookingFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookingFood.debug.xcconfig"; path = "Target Support Files/Pods-BookingFood/Pods-BookingFood.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ED67A51E0E2F4E1304EFA5C /* Pods_BookingFood.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +52,8 @@
 				96D26EB628B256430039C705 /* .gitignore */,
 				96D26E9F28B253610039C705 /* BookingFood */,
 				96D26E9E28B253610039C705 /* Products */,
+				ACA03459410FB64B681E0FA9 /* Pods */,
+				D276A9B490314D6DDBE81C61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +79,24 @@
 			path = BookingFood;
 			sourceTree = "<group>";
 		};
+		ACA03459410FB64B681E0FA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6058C7F32A8D78D95756146 /* Pods-BookingFood.debug.xcconfig */,
+				D1E718D7ECD791D7DF0A28E8 /* Pods-BookingFood.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D276A9B490314D6DDBE81C61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AECCC6565642D778DAAF0FF7 /* Pods_BookingFood.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 96D26EB128B253620039C705 /* Build configuration list for PBXNativeTarget "BookingFood" */;
 			buildPhases = (
+				8D152F49A17629F5BEDCEFA4 /* [CP] Check Pods Manifest.lock */,
 				96D26E9928B253610039C705 /* Sources */,
 				96D26E9A28B253610039C705 /* Frameworks */,
 				96D26E9B28B253610039C705 /* Resources */,
+				AE1D5B5D6BB3FF876DE3948E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,6 +165,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8D152F49A17629F5BEDCEFA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookingFood-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE1D5B5D6BB3FF876DE3948E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookingFood/Pods-BookingFood-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookingFood/Pods-BookingFood-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookingFood/Pods-BookingFood-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		96D26E9928B253610039C705 /* Sources */ = {
@@ -288,6 +357,7 @@
 		};
 		96D26EB228B253620039C705 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6058C7F32A8D78D95756146 /* Pods-BookingFood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -317,6 +387,7 @@
 		};
 		96D26EB328B253620039C705 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1E718D7ECD791D7DF0A28E8 /* Pods-BookingFood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
