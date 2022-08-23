@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		96BB1A4D28B4A49D00C79981 /* SliceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A4C28B4A49D00C79981 /* SliceVC.swift */; };
+		96BB1A5028B4A92900C79981 /* UIView_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A4F28B4A92900C79981 /* UIView_Extensions.swift */; };
+		96BB1A5228B4AA2200C79981 /* SliceVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A5128B4AA2200C79981 /* SliceVm.swift */; };
+		96BB1A5428B4C0B900C79981 /* SliceCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A5328B4C0B900C79981 /* SliceCVC.swift */; };
+		96BB1A5628B4F3C700C79981 /* String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A5528B4F3C700C79981 /* String_Extensions.swift */; };
+		96BB1A5828B4F40B00C79981 /* UIViewController_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A5728B4F40B00C79981 /* UIViewController_Extensions.swift */; };
+		96BB1A5A28B4F48C00C79981 /* UserDefault_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A5928B4F48C00C79981 /* UserDefault_Extensions.swift */; };
 		96D26EA128B253610039C705 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D26EA028B253610039C705 /* AppDelegate.swift */; };
 		96D26EA328B253610039C705 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D26EA228B253610039C705 /* SceneDelegate.swift */; };
 		96D26EA828B253610039C705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D26EA628B253610039C705 /* Main.storyboard */; };
@@ -19,6 +25,12 @@
 
 /* Begin PBXFileReference section */
 		96BB1A4C28B4A49D00C79981 /* SliceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceVC.swift; sourceTree = "<group>"; };
+		96BB1A4F28B4A92900C79981 /* UIView_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Extensions.swift; sourceTree = "<group>"; };
+		96BB1A5128B4AA2200C79981 /* SliceVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceVm.swift; sourceTree = "<group>"; };
+		96BB1A5328B4C0B900C79981 /* SliceCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceCVC.swift; sourceTree = "<group>"; };
+		96BB1A5528B4F3C700C79981 /* String_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_Extensions.swift; sourceTree = "<group>"; };
+		96BB1A5728B4F40B00C79981 /* UIViewController_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Extensions.swift; sourceTree = "<group>"; };
+		96BB1A5928B4F48C00C79981 /* UserDefault_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault_Extensions.swift; sourceTree = "<group>"; };
 		96D26E9D28B253610039C705 /* BookingFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookingFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D26EA028B253610039C705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96D26EA228B253610039C705 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +60,10 @@
 		96BB1A4528B4947100C79981 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				96BB1A4F28B4A92900C79981 /* UIView_Extensions.swift */,
+				96BB1A5528B4F3C700C79981 /* String_Extensions.swift */,
+				96BB1A5728B4F40B00C79981 /* UIViewController_Extensions.swift */,
+				96BB1A5928B4F48C00C79981 /* UserDefault_Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -94,6 +110,8 @@
 		96BB1A4E28B4A4E300C79981 /* SliceCell */ = {
 			isa = PBXGroup;
 			children = (
+				96BB1A5128B4AA2200C79981 /* SliceVm.swift */,
+				96BB1A5328B4C0B900C79981 /* SliceCVC.swift */,
 			);
 			path = SliceCell;
 			sourceTree = "<group>";
@@ -268,9 +286,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96BB1A5828B4F40B00C79981 /* UIViewController_Extensions.swift in Sources */,
+				96BB1A5628B4F3C700C79981 /* String_Extensions.swift in Sources */,
 				96D26EA128B253610039C705 /* AppDelegate.swift in Sources */,
+				96BB1A5428B4C0B900C79981 /* SliceCVC.swift in Sources */,
 				96BB1A4D28B4A49D00C79981 /* SliceVC.swift in Sources */,
+				96BB1A5A28B4F48C00C79981 /* UserDefault_Extensions.swift in Sources */,
+				96BB1A5028B4A92900C79981 /* UIView_Extensions.swift in Sources */,
 				96D26EA328B253610039C705 /* SceneDelegate.swift in Sources */,
+				96BB1A5228B4AA2200C79981 /* SliceVm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

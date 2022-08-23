@@ -10,18 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebd6ee13-2a29-48fe-a0d3-aaf5e0e30199" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend.Api/Extensions/UploadFileExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend.Api/Images/12341234123.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend.Api/Images/Avatar-Profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend.Api/Images/bddaf0ea-3192-4441-9c32-daa25b356726.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookingAppServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookingAppServer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationServices/Models/Accounts/AccountVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Accounts/AccountVm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationServices/Requests/RegisterRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Requests/RegisterRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend.Api/Backend.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Backend.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend.Api/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend.Api/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend.Api/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/appsettings.Development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Extensions/UIView_Extensions.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/SliceVC/SliceCell/SliceVm.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Base.lproj/Main.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/SliceVC/SliceVC.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/SliceVC/SliceVC.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +112,7 @@
       <workItem from="1661083454313" duration="43000" />
       <workItem from="1661083533224" duration="8381000" />
       <workItem from="1661130703611" duration="38100000" />
-      <workItem from="1661185315253" duration="9536000" />
+      <workItem from="1661185315253" duration="12435000" />
     </task>
     <servers />
   </component>
@@ -140,25 +133,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Backend.Api/Controllers/AccountController.cs</url>
-          <line>137</line>
-          <properties documentPath="$PROJECT_DIR$/Backend.Api/Controllers/AccountController.cs" initialLine="137" containingFunctionPresentation="method 'GetAvatar'">
-            <startOffsets>
-              <option value="4654" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4727" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
