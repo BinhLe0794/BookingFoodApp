@@ -25,7 +25,7 @@ public class OrderController : Controller
                 AccountId = x.AccountId,
                 Account = new AccountVm
                 {
-                    DisplayName = x.Account.UserName,
+                    Avatar = x.Account.UserName,
                     Email = x.Account.Email,
                     PhoneNumber = x.Account.PhoneNumber,
                     Fullname = x.Account.Fullname
