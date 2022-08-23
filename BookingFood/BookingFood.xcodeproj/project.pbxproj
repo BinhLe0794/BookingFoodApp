@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96BB1A4D28B4A49D00C79981 /* SliceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A4C28B4A49D00C79981 /* SliceVC.swift */; };
 		96D26EA128B253610039C705 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D26EA028B253610039C705 /* AppDelegate.swift */; };
 		96D26EA328B253610039C705 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D26EA228B253610039C705 /* SceneDelegate.swift */; };
-		96D26EA528B253610039C705 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D26EA428B253610039C705 /* ViewController.swift */; };
 		96D26EA828B253610039C705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D26EA628B253610039C705 /* Main.storyboard */; };
 		96D26EAA28B253620039C705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D26EA928B253620039C705 /* Assets.xcassets */; };
 		96D26EAD28B253620039C705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D26EAB28B253620039C705 /* LaunchScreen.storyboard */; };
@@ -18,10 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96BB1A4C28B4A49D00C79981 /* SliceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceVC.swift; sourceTree = "<group>"; };
 		96D26E9D28B253610039C705 /* BookingFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookingFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D26EA028B253610039C705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96D26EA228B253610039C705 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		96D26EA428B253610039C705 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		96D26EA728B253610039C705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96D26EA928B253620039C705 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96D26EAC28B253620039C705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +45,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96BB1A4528B4947100C79981 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		96BB1A4628B4947C00C79981 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		96BB1A4728B4949000C79981 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		96BB1A4828B494A500C79981 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96BB1A4B28B494DE00C79981 /* SliceVC */,
+				96BB1A4A28B494D500C79981 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96BB1A4A28B494D500C79981 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		96BB1A4B28B494DE00C79981 /* SliceVC */ = {
+			isa = PBXGroup;
+			children = (
+				96BB1A4E28B4A4E300C79981 /* SliceCell */,
+				96BB1A4C28B4A49D00C79981 /* SliceVC.swift */,
+			);
+			path = SliceVC;
+			sourceTree = "<group>";
+		};
+		96BB1A4E28B4A4E300C79981 /* SliceCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SliceCell;
+			sourceTree = "<group>";
+		};
 		96D26E9428B253610039C705 = {
 			isa = PBXGroup;
 			children = (
@@ -68,9 +121,12 @@
 		96D26E9F28B253610039C705 /* BookingFood */ = {
 			isa = PBXGroup;
 			children = (
+				96BB1A4828B494A500C79981 /* Views */,
+				96BB1A4728B4949000C79981 /* Services */,
+				96BB1A4628B4947C00C79981 /* Models */,
+				96BB1A4528B4947100C79981 /* Extensions */,
 				96D26EA028B253610039C705 /* AppDelegate.swift */,
 				96D26EA228B253610039C705 /* SceneDelegate.swift */,
-				96D26EA428B253610039C705 /* ViewController.swift */,
 				96D26EA628B253610039C705 /* Main.storyboard */,
 				96D26EA928B253620039C705 /* Assets.xcassets */,
 				96D26EAB28B253620039C705 /* LaunchScreen.storyboard */,
@@ -85,7 +141,6 @@
 				E6058C7F32A8D78D95756146 /* Pods-BookingFood.debug.xcconfig */,
 				D1E718D7ECD791D7DF0A28E8 /* Pods-BookingFood.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,8 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96D26EA528B253610039C705 /* ViewController.swift in Sources */,
 				96D26EA128B253610039C705 /* AppDelegate.swift in Sources */,
+				96BB1A4D28B4A49D00C79981 /* SliceVC.swift in Sources */,
 				96D26EA328B253610039C705 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7N4QJ6VZVF;
@@ -391,6 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7N4QJ6VZVF;
