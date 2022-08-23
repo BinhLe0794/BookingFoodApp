@@ -1,7 +1,6 @@
-using AdminApp.Config;
-using AdminApp.Entities;
-using AdminApp.Models.Accounts;
-using AdminApp.Models.Menu;
+using ApplicationServices.Config;
+using ApplicationServices.Models.Accounts;
+using ApplicationServices.Models.Menu;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,11 +19,11 @@ public class OrderController : Controller
     public async Task<IActionResult> Index()
     {
         var orders = await _context.Orders.Include(x => x.Account)
-            .Select(x => new OrderVm()
+            .Select(x => new OrderVm
             {
                 Id = x.Id,
                 AccountId = x.AccountId,
-                Account = new AccountVm()
+                Account = new AccountVm
                 {
                     DisplayName = x.Account.UserName,
                     Email = x.Account.Email,

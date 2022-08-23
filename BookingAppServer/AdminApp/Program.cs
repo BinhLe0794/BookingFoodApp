@@ -1,21 +1,17 @@
-using AdminApp.Config;
-using AdminApp.Entities;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using ApplicationServices.Config;
+using ApplicationServices.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.Configure<RouteOptions>(options =>
-{
-    options.LowercaseUrls = true;
-});
+builder.Services.Configure<RouteOptions>(options => { options.LowercaseUrls = true; });
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddHttpContextAccessor(); // Lấy thông tin user trong code
 // Add services to the container.
 builder.Services.AddControllersWithViews()
-     .AddRazorRuntimeCompilation();
+    .AddRazorRuntimeCompilation();
 
 //1. Đăng ký DBCONTEXT
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -32,8 +28,8 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequireLowercase = false; // Không bắt phải có chữ thường
     options.Password.RequireNonAlphanumeric = false; // Không bắt ký tự đặc biệt
     options.Password.RequireUppercase = false; // Không bắt buộc chữ in
-    options.Password.RequiredLength = 6;     // Số ký tự tối thiểu của password
-    options.Password.RequiredUniqueChars = 0;     // Số ký tự riêng biệt
+    options.Password.RequiredLength = 6; // Số ký tự tối thiểu của password
+    options.Password.RequiredUniqueChars = 0; // Số ký tự riêng biệt
 });
 
 builder.Services.AddAuthentication()
@@ -44,10 +40,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.LoginPath = "/login";
     options.AccessDeniedPath = "/AccessDenied";
 });
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromMinutes(30);
-});
+builder.Services.AddSession(options => { options.IdleTimeout = TimeSpan.FromMinutes(30); });
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -68,7 +61,7 @@ app.UseAuthorization();
 app.UseSession();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    "default",
+    "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

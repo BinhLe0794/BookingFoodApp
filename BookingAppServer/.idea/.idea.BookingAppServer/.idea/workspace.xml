@@ -10,29 +10,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebd6ee13-2a29-48fe-a0d3-aaf5e0e30199" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/AdminApp/Entities/OrderDetail.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminApp/Migrations/20220822110149_addOrderDetails.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminApp/Migrations/20220822110149_addOrderDetails.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminApp/Models/Menu/OrderDetailVm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminApp/Models/Menu/SeedData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminApp/Requests/CreateDishRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminApp/Requests/EditDishRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdminApp/Views/Dish/Categories.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApplicationServices/ApplicationServices.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend.Api/Controllers/AccountController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookingAppServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookingAppServer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminApp/Config/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Config/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/AdminApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/AdminApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Config/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Config/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Controllers/AccountController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminApp/Controllers/DishController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Controllers/DishController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Controllers/HomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminApp/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Controllers/OrderController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminApp/Entities/Dish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Entities/Dish.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminApp/Entities/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Entities/Order.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Entities/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Entities/Account.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Entities/Dish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Entities/Dish.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Entities/Interfaces/ITracking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Entities/Interfaces/ITracking.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Entities/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Entities/Order.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Entities/OrderDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Entities/OrderDetail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Migrations/20220822020355_intial.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Migrations/intial.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Migrations/20220822020355_intial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Migrations/intial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Migrations/20220822021411_changeCategoryEnums.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Migrations/changeCategoryEnums.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Migrations/20220822021411_changeCategoryEnums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Migrations/changeCategoryEnums.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Migrations/20220822110149_addOrderDetails.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Migrations/addOrderDetails.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Migrations/20220822110149_addOrderDetails.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Migrations/addOrderDetails.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminApp/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Accounts/AccountVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Models/Accounts/AccountVm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Menu/DishVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Models/Menu/DishVm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Menu/OrderVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Models/Menu/OrderVm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminApp/Views/Dish/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/Dish/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Accounts/AccountVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Accounts/AccountVm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Common/ApiErrorResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Common/ApiErrorResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Common/ApiException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Common/ApiException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Common/ApiResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Common/ApiResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Common/ApiSuccessResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Common/ApiSuccessResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Common/PagedResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Common/PagedResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Common/PagedResultBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Common/PagedResultBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Common/PagingRequestBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Common/PagingRequestBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Common/SelectItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Common/SelectItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Enums/CategoryEnums.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Enums/CategoryEnums.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Menu/DishVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Menu/DishVm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Menu/OrderDetailVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Menu/OrderDetailVm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Menu/OrderVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Menu/OrderVm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Models/Menu/SeedData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Entities/Interfaces/SeedData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Requests/CreateDishRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Requests/CreateDishRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Requests/EditDishRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Requests/EditDishRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Requests/LoginRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Requests/LoginRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Requests/RegisterRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Requests/RegisterRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Requests/UserPasswordChangeRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Requests/UserPasswordChangeRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Views/Account/Authentication.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/Account/Authentication.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Views/Account/ForgetPassword.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/Account/ForgetPassword.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Views/Account/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/Account/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Views/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/Account/Register.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminApp/Views/Dish/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/Dish/Edit.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminApp/Views/Dish/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/Dish/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Views/Home/AccessDenied.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/Home/AccessDenied.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminApp/Views/Order/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/Order/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AdminApp/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Views/Shared/_Layout.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/Shared/_Layout.cshtml.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Views/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/Shared/_LoginPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/_ViewImports.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/bootstrap/dist/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/jquery-validation/dist/additional-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/jquery-validation/dist/additional-methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/jquery-validation/dist/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/jquery-validation/dist/jquery.validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/wwwroot/lib/jquery/dist/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/wwwroot/lib/jquery/dist/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend.Api/Backend.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Backend.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend.Api/Controllers/WeatherForecastController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend.Api/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend.Api/WeatherForecast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend.Api/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BookingAppServer.sln" beforeDir="false" afterPath="$PROJECT_DIR$/BookingAppServer.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood.xcodeproj/project.xcworkspace/xcuserdata/dev-628.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood.xcodeproj/project.xcworkspace/xcuserdata/dev-628.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +96,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/37a954845b52703c5cce1aacf8fa1292378878e82bf68c4c4b5effc447316e9/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e0bea4e5f03899efe75dc4dcf582f230702687c5ac6269866345ce4aae5d8a36/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f1462b662824b61f018ff653183f3696177c35163307daae01160a42074ac48/SignInManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f3a8dfd928d7124044723494a9a7b2872a8bb9f96333d4baed4e1992126616ce/Check.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -58,26 +114,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.2852598",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rider.code.cleanup.on.save": "true",
-    "rider.code.cleanup.on.save.profile": "Built-in: Reformat Code",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.2852598&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rider.code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;rider.code.cleanup.on.save.profile&quot;: &quot;Built-in: Reformat Code&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "Markdown"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Markdown&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.AdminApp">
     <configuration name="AdminApp" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/AdminApp/AdminApp.csproj" />
@@ -126,7 +182,8 @@
       <workItem from="1661082945582" duration="12000" />
       <workItem from="1661083454313" duration="43000" />
       <workItem from="1661083533224" duration="8381000" />
-      <workItem from="1661130703611" duration="34868000" />
+      <workItem from="1661130703611" duration="38100000" />
+      <workItem from="1661185315253" duration="806000" />
     </task>
     <servers />
   </component>

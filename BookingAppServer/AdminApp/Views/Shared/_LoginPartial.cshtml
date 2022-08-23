@@ -1,4 +1,4 @@
-@if( User.Identity.IsAuthenticated )
+@if (User.Identity.IsAuthenticated)
 {
     <a asp-action="Index" asp-controller="Account" class="text-bold mx-3">@User.Identity.Name</a>
     <a asp-action="Logout" asp-controller="Account" class="btn btn-danger">Sign Out</a>

@@ -1,13 +1,11 @@
-using System.Text.Json;
-using AdminApp.Config;
-using AdminApp.Entities;
-using AdminApp.Models.Common;
-using AdminApp.Models.Enums;
-using AdminApp.Models.Menu;
-using AdminApp.Requests;
+using ApplicationServices.Config;
+using ApplicationServices.Entities;
+using ApplicationServices.Entities.Interfaces;
+using ApplicationServices.Models.Common;
+using ApplicationServices.Models.Menu;
+using ApplicationServices.Requests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 
 namespace AdminApp.Controllers;
@@ -25,7 +23,7 @@ public class DishController : Controller
     [HttpGet]
     public async Task<IActionResult> Index()
     {
-        var dishes = await _context.Dishes.Select(x => new DishVm()
+        var dishes = await _context.Dishes.Select(x => new DishVm
             {
                 Id = x.Id.ToString(),
                 Category = x.Category,
@@ -83,12 +81,9 @@ public class DishController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(CreateDishRequest request)
     {
-        if (!ModelState.IsValid)
-        {
-            return View(request);
-        }
+        if (!ModelState.IsValid) return View(request);
 
-        var dish = new Dish()
+        var dish = new Dish
         {
             Id = Guid.NewGuid(),
             Category = request.Category,
@@ -121,7 +116,7 @@ public class DishController : Controller
             return View();
         }
 
-        var request = new EditDishRequest()
+        var request = new EditDishRequest
         {
             Id = dish.Id,
             Category = dish.Category,
@@ -137,10 +132,7 @@ public class DishController : Controller
     [HttpPost]
     public async Task<IActionResult> Edit(EditDishRequest request)
     {
-        if (!ModelState.IsValid)
-        {
-            return View(request);
-        }
+        if (!ModelState.IsValid) return View(request);
 
         var dish = await _context.Dishes.FindAsync(request.Id);
         if (dish == null)

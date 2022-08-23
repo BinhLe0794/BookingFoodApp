@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using AdminApp.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AdminApp.Controllers;
 
@@ -18,16 +18,19 @@ public class HomeController : Controller
     {
         return View();
     }
+
     [Authorize]
     public IActionResult Privacy()
     {
         return View();
     }
+
     [HttpGet("/AccessDenied")]
     public IActionResult AccessDenied()
     {
         return View();
     }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
