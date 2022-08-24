@@ -12,7 +12,7 @@ extension UIViewController {
         return String(describing: self)
     }
     // return the instance of ViewController
-    static func GetInstantiate() -> Self {
+    static func GetStoryBoardId() -> Self {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: getNameasIdentifier) as! Self
     }

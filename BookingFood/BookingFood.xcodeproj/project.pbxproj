@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96596F1F28B5B663006A527D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F1E28B5B663006A527D /* HomeVC.swift */; };
+		96596F2428B5B6E6006A527D /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F2328B5B6E6006A527D /* AccountVC.swift */; };
+		96596F2628B5C2AD006A527D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F2528B5C2AD006A527D /* LoginVC.swift */; };
+		96596F2828B5C2B9006A527D /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F2728B5C2B9006A527D /* RegisterVC.swift */; };
+		96596F2B28B5DD15006A527D /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F2A28B5DD15006A527D /* ForgetPasswordVC.swift */; };
 		96BB1A4D28B4A49D00C79981 /* SliceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A4C28B4A49D00C79981 /* SliceVC.swift */; };
 		96BB1A5028B4A92900C79981 /* UIView_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A4F28B4A92900C79981 /* UIView_Extensions.swift */; };
 		96BB1A5228B4AA2200C79981 /* SliceVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A5128B4AA2200C79981 /* SliceVm.swift */; };
@@ -24,6 +29,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96596F1E28B5B663006A527D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		96596F2328B5B6E6006A527D /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
+		96596F2528B5C2AD006A527D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		96596F2728B5C2B9006A527D /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		96596F2A28B5DD15006A527D /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 		96BB1A4C28B4A49D00C79981 /* SliceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceVC.swift; sourceTree = "<group>"; };
 		96BB1A4F28B4A92900C79981 /* UIView_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Extensions.swift; sourceTree = "<group>"; };
 		96BB1A5128B4AA2200C79981 /* SliceVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceVm.swift; sourceTree = "<group>"; };
@@ -57,6 +67,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96596F1D28B5B62D006A527D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				96596F1E28B5B663006A527D /* HomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		96596F2028B5B668006A527D /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				96596F2928B5DCFF006A527D /* ForgetPassword */,
+				96596F2228B5B680006A527D /* Register */,
+				96596F2128B5B674006A527D /* Login */,
+				96596F2328B5B6E6006A527D /* AccountVC.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		96596F2128B5B674006A527D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				96596F2528B5C2AD006A527D /* LoginVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		96596F2228B5B680006A527D /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				96596F2728B5C2B9006A527D /* RegisterVC.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		96596F2928B5DCFF006A527D /* ForgetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				96596F2A28B5DD15006A527D /* ForgetPasswordVC.swift */,
+			);
+			path = ForgetPassword;
+			sourceTree = "<group>";
+		};
 		96BB1A4528B4947100C79981 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +138,9 @@
 		96BB1A4828B494A500C79981 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				96BB1A4B28B494DE00C79981 /* SliceVC */,
+				96596F2028B5B668006A527D /* Account */,
+				96596F1D28B5B62D006A527D /* Home */,
+				96BB1A4B28B494DE00C79981 /* Slice */,
 				96BB1A4A28B494D500C79981 /* Components */,
 			);
 			path = Views;
@@ -98,13 +153,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		96BB1A4B28B494DE00C79981 /* SliceVC */ = {
+		96BB1A4B28B494DE00C79981 /* Slice */ = {
 			isa = PBXGroup;
 			children = (
 				96BB1A4E28B4A4E300C79981 /* SliceCell */,
 				96BB1A4C28B4A49D00C79981 /* SliceVC.swift */,
 			);
-			path = SliceVC;
+			path = Slice;
 			sourceTree = "<group>";
 		};
 		96BB1A4E28B4A4E300C79981 /* SliceCell */ = {
@@ -286,7 +341,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96596F2428B5B6E6006A527D /* AccountVC.swift in Sources */,
 				96BB1A5828B4F40B00C79981 /* UIViewController_Extensions.swift in Sources */,
+				96596F2628B5C2AD006A527D /* LoginVC.swift in Sources */,
+				96596F1F28B5B663006A527D /* HomeVC.swift in Sources */,
 				96BB1A5628B4F3C700C79981 /* String_Extensions.swift in Sources */,
 				96D26EA128B253610039C705 /* AppDelegate.swift in Sources */,
 				96BB1A5428B4C0B900C79981 /* SliceCVC.swift in Sources */,
@@ -295,6 +353,8 @@
 				96BB1A5028B4A92900C79981 /* UIView_Extensions.swift in Sources */,
 				96D26EA328B253610039C705 /* SceneDelegate.swift in Sources */,
 				96BB1A5228B4AA2200C79981 /* SliceVm.swift in Sources */,
+				96596F2B28B5DD15006A527D /* ForgetPasswordVC.swift in Sources */,
+				96596F2828B5C2B9006A527D /* RegisterVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
