@@ -12,6 +12,13 @@
 		96596F2628B5C2AD006A527D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F2528B5C2AD006A527D /* LoginVC.swift */; };
 		96596F2828B5C2B9006A527D /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F2728B5C2B9006A527D /* RegisterVC.swift */; };
 		96596F2B28B5DD15006A527D /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F2A28B5DD15006A527D /* ForgetPasswordVC.swift */; };
+		96596F2D28B60D6D006A527D /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F2C28B60D6D006A527D /* HttpClient.swift */; };
+		96596F2F28B60D98006A527D /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F2E28B60D98006A527D /* ApiResult.swift */; };
+		96596F3228B60E20006A527D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F3128B60E20006A527D /* AuthService.swift */; };
+		96596F3728B60E73006A527D /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F3628B60E73006A527D /* Route.swift */; };
+		96596F3D28B72497006A527D /* UIImage_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F3C28B72497006A527D /* UIImage_Extensions.swift */; };
+		96B4126628B85B2E003CC98C /* HttpModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4126528B85B2E003CC98C /* HttpModels.swift */; };
+		96B4126928B8614F003CC98C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4126828B8614F003CC98C /* CardView.swift */; };
 		96BB1A4D28B4A49D00C79981 /* SliceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A4C28B4A49D00C79981 /* SliceVC.swift */; };
 		96BB1A5028B4A92900C79981 /* UIView_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A4F28B4A92900C79981 /* UIView_Extensions.swift */; };
 		96BB1A5228B4AA2200C79981 /* SliceVm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A5128B4AA2200C79981 /* SliceVm.swift */; };
@@ -34,6 +41,13 @@
 		96596F2528B5C2AD006A527D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		96596F2728B5C2B9006A527D /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		96596F2A28B5DD15006A527D /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
+		96596F2C28B60D6D006A527D /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		96596F2E28B60D98006A527D /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
+		96596F3128B60E20006A527D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		96596F3628B60E73006A527D /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		96596F3C28B72497006A527D /* UIImage_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Extensions.swift; sourceTree = "<group>"; };
+		96B4126528B85B2E003CC98C /* HttpModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpModels.swift; sourceTree = "<group>"; };
+		96B4126828B8614F003CC98C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		96BB1A4C28B4A49D00C79981 /* SliceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceVC.swift; sourceTree = "<group>"; };
 		96BB1A4F28B4A92900C79981 /* UIView_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Extensions.swift; sourceTree = "<group>"; };
 		96BB1A5128B4AA2200C79981 /* SliceVm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceVm.swift; sourceTree = "<group>"; };
@@ -110,13 +124,23 @@
 			path = ForgetPassword;
 			sourceTree = "<group>";
 		};
+		96596F3328B60E46006A527D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96596F3628B60E73006A527D /* Route.swift */,
+				96B4126528B85B2E003CC98C /* HttpModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		96BB1A4528B4947100C79981 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				96BB1A4F28B4A92900C79981 /* UIView_Extensions.swift */,
-				96BB1A5528B4F3C700C79981 /* String_Extensions.swift */,
 				96BB1A5728B4F40B00C79981 /* UIViewController_Extensions.swift */,
+				96BB1A5528B4F3C700C79981 /* String_Extensions.swift */,
 				96BB1A5928B4F48C00C79981 /* UserDefault_Extensions.swift */,
+				96596F3C28B72497006A527D /* UIImage_Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -131,6 +155,10 @@
 		96BB1A4728B4949000C79981 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				96596F3328B60E46006A527D /* Models */,
+				96596F2C28B60D6D006A527D /* HttpClient.swift */,
+				96596F2E28B60D98006A527D /* ApiResult.swift */,
+				96596F3128B60E20006A527D /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -149,6 +177,7 @@
 		96BB1A4A28B494D500C79981 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				96B4126828B8614F003CC98C /* CardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -194,10 +223,10 @@
 		96D26E9F28B253610039C705 /* BookingFood */ = {
 			isa = PBXGroup;
 			children = (
-				96BB1A4828B494A500C79981 /* Views */,
-				96BB1A4728B4949000C79981 /* Services */,
-				96BB1A4628B4947C00C79981 /* Models */,
 				96BB1A4528B4947100C79981 /* Extensions */,
+				96BB1A4628B4947C00C79981 /* Models */,
+				96BB1A4728B4949000C79981 /* Services */,
+				96BB1A4828B494A500C79981 /* Views */,
 				96D26EA028B253610039C705 /* AppDelegate.swift */,
 				96D26EA228B253610039C705 /* SceneDelegate.swift */,
 				96D26EA628B253610039C705 /* Main.storyboard */,
@@ -344,15 +373,22 @@
 				96596F2428B5B6E6006A527D /* AccountVC.swift in Sources */,
 				96BB1A5828B4F40B00C79981 /* UIViewController_Extensions.swift in Sources */,
 				96596F2628B5C2AD006A527D /* LoginVC.swift in Sources */,
+				96596F2F28B60D98006A527D /* ApiResult.swift in Sources */,
 				96596F1F28B5B663006A527D /* HomeVC.swift in Sources */,
+				96596F3D28B72497006A527D /* UIImage_Extensions.swift in Sources */,
 				96BB1A5628B4F3C700C79981 /* String_Extensions.swift in Sources */,
+				96B4126928B8614F003CC98C /* CardView.swift in Sources */,
+				96596F3728B60E73006A527D /* Route.swift in Sources */,
 				96D26EA128B253610039C705 /* AppDelegate.swift in Sources */,
 				96BB1A5428B4C0B900C79981 /* SliceCVC.swift in Sources */,
 				96BB1A4D28B4A49D00C79981 /* SliceVC.swift in Sources */,
 				96BB1A5A28B4F48C00C79981 /* UserDefault_Extensions.swift in Sources */,
 				96BB1A5028B4A92900C79981 /* UIView_Extensions.swift in Sources */,
+				96B4126628B85B2E003CC98C /* HttpModels.swift in Sources */,
+				96596F2D28B60D6D006A527D /* HttpClient.swift in Sources */,
 				96D26EA328B253610039C705 /* SceneDelegate.swift in Sources */,
 				96BB1A5228B4AA2200C79981 /* SliceVm.swift in Sources */,
+				96596F3228B60E20006A527D /* AuthService.swift in Sources */,
 				96596F2B28B5DD15006A527D /* ForgetPasswordVC.swift in Sources */,
 				96596F2828B5C2B9006A527D /* RegisterVC.swift in Sources */,
 			);

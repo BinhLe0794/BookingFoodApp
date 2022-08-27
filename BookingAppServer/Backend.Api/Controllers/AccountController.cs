@@ -1,10 +1,10 @@
-using System.ComponentModel.DataAnnotations;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using ApplicationServices.Entities;
 using ApplicationServices.Models.Accounts;
 using ApplicationServices.Models.Common;
 using ApplicationServices.Requests;
+using Backend.Api.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +14,7 @@ namespace Backend.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class AccountController : ControllerBase
 {
     private readonly RoleManager<IdentityRole> _roleManager;
@@ -34,7 +35,9 @@ public class AccountController : ControllerBase
     {
         public IFormFile? FileUpload { get; set; }
     }
+
     [HttpPost("/register")]
+    [ApiValidationFilter]
     public async Task<IActionResult> Register([FromForm] RegisterFileRequest request)
     {
         try
@@ -64,7 +67,6 @@ public class AccountController : ControllerBase
             if (!result.Succeeded)
             {
                 return BadRequest(new ApiErrorResult<AccountVm>("Register Failed"));
-               
             }
 
             if (request.FileUpload != null)
@@ -75,24 +77,26 @@ public class AccountController : ControllerBase
                     await SaveAvatar(request.FileUpload, newUser.Id);
                 }
             }
-            
+
             return Ok(new ApiSuccessResult<AccountVm>(new AccountVm(newAccount)));
         }
         catch (Exception e)
         {
-            return BadRequest(new ApiException<AccountVm>(e));
+            return BadRequest(new ApiException<bool>(e));
         }
     }
 
     [HttpPost("/upload-avatar")]
-    public async Task<IActionResult> UploadAvatar(IFormFile avatar,string fileName)
+    [ApiValidationFilter]
+    public async Task<IActionResult> UploadAvatar(IFormFile avatar, string fileName)
     {
         var filepath = await SaveAvatar(avatar, fileName);
         return Ok(filepath);
     }
-    
+
     [AllowAnonymous]
     [HttpPost("/login")]
+    [ApiValidationFilter]
     public async Task<IActionResult> Authentication(LoginRequest request)
     {
         try
@@ -128,10 +132,38 @@ public class AccountController : ControllerBase
         }
         catch (Exception e)
         {
-            return BadRequest(new ApiException<AccountVm>(e));
+            return BadRequest(new ApiException<bool>(e));
         }
     }
-
+    [HttpGet("{userId}")]
+    [ApiValidationFilter]
+    public async Task<IActionResult> GetUserInfo(string userId)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(userId))
+            {
+                return BadRequest(new ApiErrorResult<AccountVm>("Check your request"));
+            }
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return BadRequest(new ApiErrorResult<AccountVm>("Invalid User"));
+            }
+            var userVm = new AccountVm()
+            {
+                Fullname = user.Fullname,
+                PhoneNumber = user.PhoneNumber,
+                Email = user.Email,
+                Avatar = ""
+            };
+            return Ok(new ApiSuccessResult<AccountVm>(userVm));
+        }
+        catch (Exception e)
+        {
+            return BadRequest(new ApiException<bool>(e));
+        }
+    }
     #region Private function
     private async Task<string?> SaveAvatar(IFormFile file, string userId)
     {
@@ -165,17 +197,19 @@ public class AccountController : ControllerBase
             return null;
         }
     }
+
     private static string GetAvatar(string userId)
     {
         if (string.IsNullOrEmpty(userId))
         {
             return string.Empty;
         }
-         
+
         var pathToRead = Path.Combine(Directory.GetCurrentDirectory(), "Images");
         var photos = Directory
             .EnumerateFiles(pathToRead).FirstOrDefault(x => x.Contains(userId));
         return photos ?? string.Empty;
-    } 
+    }
+
     #endregion
 }

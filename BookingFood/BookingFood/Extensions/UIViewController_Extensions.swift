@@ -8,13 +8,13 @@ import UIKit
 
 extension UIViewController {
     // return the name of the Controller
-    static var getNameasIdentifier: String{
+    static var getIdentifier: String{
         return String(describing: self)
     }
     // return the instance of ViewController
-    static func GetStoryBoardId() -> Self {
+    static func getStoryBoardId() -> Self {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: getNameasIdentifier) as! Self
+        return storyboard.instantiateViewController(withIdentifier: getIdentifier) as! Self
     }
     
 }

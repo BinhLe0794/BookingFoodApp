@@ -6,26 +6,58 @@
 //
 
 import UIKit
-
+import ProgressHUD
 class LoginVC: UIViewController {
 
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var inputStackView: UIStackView!
-    
+    @IBOutlet weak var txtUsername: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var lbErrorMessage: UILabel!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.animationLogo()
+
     }
-    private func animationLogo(){
+    
+    private func animationLogo() {
         let mainWidth = view.frame.width
 //        let mainHeight = view.frame.height
-        let sizeLogo = inputStackView.frame.origin.y/2
-        print("sizeLogo: \(sizeLogo)")
+        let sizeLogo = inputStackView.frame.origin.y / 2
+
         imgLogo.frame.size = .init(width: sizeLogo, height: sizeLogo)
-        imgLogo.frame.origin = .init(x: mainWidth/2 - self.imgLogo.frame.width/2, y: 0 - self.imgLogo.frame.height)
-        
+        imgLogo.frame.origin = .init(x: mainWidth / 2 - self.imgLogo.frame.width / 2, y: 0 - self.imgLogo.frame.height)
+
         UIView.animate(withDuration: 2) { [self] in
-            imgLogo.frame.origin.y = inputStackView.frame.origin.y - imgLogo.frame.size.height*1.5
+            imgLogo.frame.origin.y = inputStackView.frame.origin.y - imgLogo.frame.size.height * 2
+        }
+    }
+
+    @IBAction func btnLogin_Clicked(_ sender: Any) {
+        ProgressHUD.show()
+        let request: [String: Any] = [
+            "username": txtUsername.text?.trimmingCharacters(in: .whitespaces) ?? "",
+            "password": txtPassword.text?.trimmingCharacters(in: .whitespaces) ?? ""
+        ]
+        AuthService.shared.loginRequest(requestBody: request) { apiResult in
+            ProgressHUD.dismiss()
+            switch apiResult {
+            case .success(let data):
+//                print("data: \(data)")
+                //TODO: Save the User Token
+                UserDefaults.standard.setCurrentUser(data)
+                
+                self.navigationController?.popToRootViewController(animated: true)
+
+            case .failure(let error):
+                //print("error: \(error.localizedDescription)")
+                DispatchQueue.main.async { [self] in
+                    lbErrorMessage.text = error.localizedDescription
+                }
+
+            }
         }
     }
 }
