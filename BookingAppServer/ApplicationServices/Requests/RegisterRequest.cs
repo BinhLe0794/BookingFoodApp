@@ -5,7 +5,7 @@ namespace ApplicationServices.Requests;
 public class RegisterRequest : LoginRequest
 {
     [Required(ErrorMessage = "E-mail can't be empty")]
-    [DataType(DataType.EmailAddress, ErrorMessage = "E-mail is not valid")]
+    [EmailAddress(ErrorMessage = "Invalid Email Address.")]
     public string Email { get; set; }
 
 

@@ -61,16 +61,16 @@ struct HttpClient {
             let response = try? decoder.decode(ApiResult<T>.self, from: data)
 
             guard response != nil else {
-                let response = try? decoder.decode(ApiResult<Bool>.self, from: data)
-                print("decoded_ApiResult_bool >>>>: \(response!)")
-                if response != nil {
-                    completion(.failure(AppError.serverError((response?.message)!)))
+                let apiBool = try? decoder.decode(ApiResult<Bool>.self, from: data)
+                print("decoded_ApiResult_bool >>>>: \(apiBool)")
+                if apiBool != nil {
+                    completion(.failure(AppError.serverError((apiBool?.message) ?? "500")))
                 } else {
                     completion(.failure(AppError.errorDecoding))
                 }
                 return
             }
-            if response!.isSuccessed {
+            if ((response?.isSuccessed) != nil) {
                 if let decodedData = response?.resultObj {
                     print("decoded_resultObj >>>>: \(decodedData)")
                     completion(.success(decodedData))

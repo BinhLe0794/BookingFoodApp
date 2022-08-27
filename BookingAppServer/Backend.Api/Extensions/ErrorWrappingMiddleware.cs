@@ -1,4 +1,5 @@
 using ApplicationServices.Models.Common;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace Backend.Api.Extensions;
@@ -39,9 +40,7 @@ public class ErrorWrappingMiddleware
             {
                 response.Message = "Unauthorized";
             }
-            var json = JsonConvert.SerializeObject(response);
-
-            await context.Response.WriteAsync(json);
+            await context.Response.WriteAsJsonAsync(response);
         }
     }
 }
