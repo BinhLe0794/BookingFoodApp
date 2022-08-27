@@ -21,7 +21,6 @@ namespace Backend.Api.Controllers;
 [Authorize]
 public class AccountController : ControllerBase
 {
-    public int MyProperty { get; set; }
     private readonly RoleManager<IdentityRole> _roleManager;
     private readonly SignInManager<Account> _signInManager;
     private readonly UserManager<Account> _userManager;
