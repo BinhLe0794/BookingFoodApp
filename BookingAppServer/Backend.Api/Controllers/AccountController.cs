@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using NuGet.Protocol.Plugins;
 
 namespace Backend.Api.Controllers;
 
@@ -17,6 +18,8 @@ namespace Backend.Api.Controllers;
 [Authorize]
 public class AccountController : ControllerBase
 {
+
+    public string Name { get; set; }
     private readonly RoleManager<IdentityRole> _roleManager;
     private readonly SignInManager<Account> _signInManager;
     private readonly UserManager<Account> _userManager;
