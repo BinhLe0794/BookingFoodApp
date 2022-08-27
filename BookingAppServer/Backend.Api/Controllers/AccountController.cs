@@ -20,6 +20,7 @@ public class AccountController : ControllerBase
 {
 
     public string Name { get; set; }
+    public string Age { get; set; }
     private readonly RoleManager<IdentityRole> _roleManager;
     private readonly SignInManager<Account> _signInManager;
     private readonly UserManager<Account> _userManager;
