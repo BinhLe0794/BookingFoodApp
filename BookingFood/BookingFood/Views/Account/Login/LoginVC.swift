@@ -42,18 +42,19 @@ class LoginVC: UIViewController {
             "password": txtPassword.text?.trimmingCharacters(in: .whitespaces) ?? ""
         ]
         AuthService.shared.loginRequest(requestBody: request) { apiResult in
-            ProgressHUD.dismiss()
+            
             switch apiResult {
             case .success(let data):
 //                print("data: \(data)")
                 //TODO: Save the User Token
                 UserDefaults.standard.setCurrentUser(data)
-                
+                ProgressHUD.dismiss()
                 self.navigationController?.popToRootViewController(animated: true)
 
             case .failure(let error):
                 //print("error: \(error.localizedDescription)")
                 DispatchQueue.main.async { [self] in
+                    ProgressHUD.dismiss()
                     lbErrorMessage.text = error.localizedDescription
                 }
 

@@ -38,7 +38,7 @@ class RegisterVC: UIViewController {
         let request: [String: String] = [
             "Email": txtEmail.text ?? "",
             "Username": txtUsername.text ?? "",
-            "Phone": txtPhone.text ?? "",
+            "PhoneNumber": txtPhone.text ?? "",
             "Password": txtPassword.text ?? "",
             "ConfirmPassword": txtConfirm.text ?? "",
         ]
@@ -49,14 +49,15 @@ class RegisterVC: UIViewController {
         ProgressHUD.show()
         AuthService.shared.registerRequest(requestBody: getRequest(),
                                            image: imgAvatar.image) { apiResult in
-            ProgressHUD.dismiss()
+
             switch apiResult {
             case .success(let data):
                 print("User: \(data.fullname)")
                 let loginController = LoginVC.getStoryBoardId()
+                ProgressHUD.showSucceed("Register Successfully", interaction: true)
                 self.navigationController?.pushViewController(loginController, animated: true)
             case .failure(let error):
-                ProgressHUD.showError("\(error.localizedDescription)")
+                ProgressHUD.showError("\(error.localizedDescription)", image: nil, interaction: true)
                 print(error.localizedDescription)
             }
         }

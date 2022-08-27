@@ -38,6 +38,7 @@ class AccountVC: UIViewController {
         if !isLogin {
             pushToLogin()
         }
+        imgAvatar.makeRounded()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -66,11 +67,11 @@ class AccountVC: UIViewController {
         navigationController?.pushViewController(loginController, animated: true)
     }
     func setViewDefault() {
-        lbName.text = "Name: Guest"
-        lbEmail.text = "Email: No Email"
-        lbPhone.text = "Phone: N/A"
-        lbOrder.text = "Order: 0"
-        lbLastOrder.text = "Last Order: N/A"
+        lbName.text = "Guest"
+        lbEmail.text = "No Email"
+        lbPhone.text = "N/A"
+        lbOrder.text = "0"
+        lbLastOrder.text = "N/A"
         
         btnSignIn.setTitle("Let's Sign In", for: .normal)
         btnSignIn.setTitleColor(.white, for: .normal)
@@ -80,16 +81,26 @@ class AccountVC: UIViewController {
         btnRegister.isHidden = false
     }
     func setUserView(_ user: UserVm) {
-        lbName.text = "Name: \(user.fullname ?? "\("Guest")")"
-        lbEmail.text = "Email: \(user.email ?? "\("No Email")")"
-        lbPhone.text = "Phone: \(user.phoneNumber ?? "\("N/A")")"
-        lbOrder.text = "Order: 0"
-        lbLastOrder.text = "Last Order: N/A"
+        guard user.token != nil else {
+            setViewDefault()
+            return
+        }
+    
+        lbName.text = "\(user.fullname ?? "\("Guest")")"
+        lbEmail.text = "\(user.email ?? "\("No Email")")"
+        lbPhone.text = "\(user.phoneNumber ?? "\("N/A")")"
+        lbOrder.text = "0"
+        lbLastOrder.text = "N/A"
+        if let avatar = UIImage(contentsOfFile: user.avatar!) {
+            imgAvatar.image = avatar
+        }else {
+            imgAvatar.image = UIImage(named: "logo")
+        }
 
         lbOr.isHidden = true
         btnRegister.isHidden = true
         btnSignIn.setTitle("Logout", for: .normal)
         btnSignIn.setTitleColor(.red, for: .normal)
-        btnSignIn.backgroundColor = .lightGray
+        btnSignIn.backgroundColor = .darkGray
     }
 }
