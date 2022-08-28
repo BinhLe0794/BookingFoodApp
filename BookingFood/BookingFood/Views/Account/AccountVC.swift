@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class AccountVC: UIViewController {
 
@@ -42,13 +43,16 @@ class AccountVC: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        ProgressHUD.show()
         if !isLogin {
             setViewDefault()
+            ProgressHUD.showFailed("No User", interaction: true)
         }
         else {
             let user = UserDefaults.standard.getCurrentUser()
             guard user != nil else { return setViewDefault() }
             setUserView(user!)
+            ProgressHUD.showSucceed("Authentication", interaction: true)
         }
     }
 

@@ -15,11 +15,13 @@ class LoginVC: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var lbErrorMessage: UILabel!
 
-
+    @IBOutlet weak var imgTooglePassword: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.animationLogo()
-
+        UserDefaults.standard.removeCurrentUser()
+        
     }
     
     private func animationLogo() {
@@ -35,6 +37,17 @@ class LoginVC: UIViewController {
         }
     }
 
+    @IBAction func togglePassword_Tap(_ sender: Any) {
+        txtPassword.isSecureTextEntry = !txtPassword.isSecureTextEntry
+        if txtPassword.isSecureTextEntry {
+            imgTooglePassword.image = UIImage(systemName: "eye.slash")
+        }else {
+            imgTooglePassword.image = UIImage(systemName: "eye")
+        }
+      
+    }
+    
+    
     @IBAction func btnLogin_Clicked(_ sender: Any) {
         ProgressHUD.show()
         let request: [String: Any] = [
