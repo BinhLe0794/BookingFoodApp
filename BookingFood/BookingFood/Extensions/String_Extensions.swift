@@ -12,3 +12,12 @@ extension String {
         return URL(string: self)
     }
 }
+
+extension Double {
+    func toCurrency() -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "en_US")
+        return formatter.string(from: self as NSNumber)!
+    }
+}

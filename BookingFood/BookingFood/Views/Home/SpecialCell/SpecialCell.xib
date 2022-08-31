@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SpecialCell" customModule="BookingFood" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="96"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="96"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VP4-Of-itk" customClass="CardView" customModule="BookingFood" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="96"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GVX-aN-gVQ">
+                                <rect key="frame" x="16" y="16" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="84E-ic-L93"/>
+                                    <constraint firstAttribute="width" constant="64" id="8qL-SJ-Xdi"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kEg-KR-BFg">
+                                <rect key="frame" x="96" y="15" width="188" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGE-UK-1nD">
+                                        <rect key="frame" x="0.0" y="0.0" width="188" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a example for the description in the special dishes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxG-oS-S91">
+                                        <rect key="frame" x="0.0" y="24" width="188" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="1mQ-hq-hOc">
+                                        <rect key="frame" x="0.0" y="44.5" width="188" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.99$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbP-w8-SOY">
+                                                <rect key="frame" x="0.0" y="0.0" width="45" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.87869018320000003" green="0.22575575110000001" blue="0.0042923004370000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200 calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pt5-dj-CWD">
+                                                <rect key="frame" x="94" y="0.0" width="94" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="tintColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GVX-aN-gVQ" firstAttribute="leading" secondItem="VP4-Of-itk" secondAttribute="leading" constant="16" id="46b-xh-cdb"/>
+                            <constraint firstItem="kEg-KR-BFg" firstAttribute="leading" secondItem="GVX-aN-gVQ" secondAttribute="trailing" constant="16" id="BmZ-ZG-rLD"/>
+                            <constraint firstAttribute="bottom" secondItem="GVX-aN-gVQ" secondAttribute="bottom" constant="16" id="j92-CZ-Erm"/>
+                            <constraint firstAttribute="bottom" secondItem="kEg-KR-BFg" secondAttribute="bottom" constant="16" id="keJ-rg-Z8q"/>
+                            <constraint firstAttribute="width" constant="300" id="m2D-jg-gvb"/>
+                            <constraint firstItem="GVX-aN-gVQ" firstAttribute="top" secondItem="VP4-Of-itk" secondAttribute="top" constant="16" id="miq-Rz-DOz"/>
+                            <constraint firstAttribute="trailing" secondItem="kEg-KR-BFg" secondAttribute="trailing" constant="16" id="zd6-3c-sQW"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="VP4-Of-itk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="PCY-0R-sTQ"/>
+                <constraint firstItem="VP4-Of-itk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bhv-7b-zSl"/>
+                <constraint firstAttribute="trailing" secondItem="VP4-Of-itk" secondAttribute="trailing" id="etC-bP-ET1"/>
+                <constraint firstAttribute="bottom" secondItem="VP4-Of-itk" secondAttribute="bottom" id="xZa-uT-pqR"/>
+            </constraints>
+            <size key="customSize" width="300" height="96"/>
+            <connections>
+                <outlet property="imgView" destination="GVX-aN-gVQ" id="yxf-04-W0J"/>
+                <outlet property="lbCalories" destination="pt5-dj-CWD" id="Pup-jZ-AOH"/>
+                <outlet property="lbDescription" destination="fxG-oS-S91" id="zEh-0J-vlf"/>
+                <outlet property="lbName" destination="LGE-UK-1nD" id="Fam-0d-MPc"/>
+                <outlet property="lbPrice" destination="sbP-w8-SOY" id="YEa-ER-0Qz"/>
+            </connections>
+            <point key="canvasLocation" x="311.59420289855075" y="93.080357142857139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
