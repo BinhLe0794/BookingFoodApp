@@ -7,11 +7,13 @@
 
 import Foundation
 
-struct DishVm : Decodable {
+struct DishVm : Codable {
     let id,name: String
     let description,image,category: String?
     let calories: Int?
     let price: Double
+    
+    var cartId: String?
     
     var formattedCalories: String {
         return "\(calories ?? 0) calories"

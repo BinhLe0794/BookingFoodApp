@@ -52,7 +52,7 @@ class RegisterVC: UIViewController {
 
             switch apiResult {
             case .success(let data):
-                print("User: \(data.fullname)")
+                print("User: \(String(describing: data.fullname))")
                 let loginController = LoginVC.getStoryBoardId()
                 ProgressHUD.showSucceed("Register Successfully", interaction: true)
                 self.navigationController?.pushViewController(loginController, animated: true)

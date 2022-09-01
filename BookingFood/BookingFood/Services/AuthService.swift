@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct UserVm: Codable {
-    let fullname, email, avatar, phoneNumber, token,refreshToken: String?
+    let id, fullname, email, avatar, phoneNumber, token,refreshToken: String?
 }
 
 struct AuthService {

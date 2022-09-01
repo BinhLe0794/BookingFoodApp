@@ -107,11 +107,13 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
 
         case collectionPopular:
             let dishDetailVC = DishDetailVC.getStoryBoardId()
-            print(categories[indexPath.row].name)
+//            print(categories[indexPath.row].name)
+            dishDetailVC.currentDish = populars[indexPath.row]
             navigationController?.pushViewController(dishDetailVC, animated: true)
         case collectionSpecial:
             let dishDetailVC = DishDetailVC.getStoryBoardId()
-            print(categories[indexPath.row].name)
+//            print(categories[indexPath.row].name)
+            dishDetailVC.currentDish = special[indexPath.row]
             navigationController?.pushViewController(dishDetailVC, animated: true)
         default: print("")
         }
