@@ -34,6 +34,7 @@
 		96596F3228B60E20006A527D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F3128B60E20006A527D /* AuthService.swift */; };
 		96596F3728B60E73006A527D /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F3628B60E73006A527D /* Route.swift */; };
 		96596F3D28B72497006A527D /* UIImage_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F3C28B72497006A527D /* UIImage_Extensions.swift */; };
+		968A3AFA28C09A7B00358396 /* DishService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968A3AF928C09A7B00358396 /* DishService.swift */; };
 		96B4126628B85B2E003CC98C /* HttpModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4126528B85B2E003CC98C /* HttpModels.swift */; };
 		96B4126928B8614F003CC98C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4126828B8614F003CC98C /* CardView.swift */; };
 		96BB1A4D28B4A49D00C79981 /* SliceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1A4C28B4A49D00C79981 /* SliceVC.swift */; };
@@ -80,6 +81,7 @@
 		96596F3128B60E20006A527D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		96596F3628B60E73006A527D /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		96596F3C28B72497006A527D /* UIImage_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Extensions.swift; sourceTree = "<group>"; };
+		968A3AF928C09A7B00358396 /* DishService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishService.swift; sourceTree = "<group>"; };
 		96B4126528B85B2E003CC98C /* HttpModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpModels.swift; sourceTree = "<group>"; };
 		96B4126828B8614F003CC98C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		96BB1A4C28B4A49D00C79981 /* SliceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceVC.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				96596F2C28B60D6D006A527D /* HttpClient.swift */,
 				96596F2E28B60D98006A527D /* ApiResult.swift */,
 				96596F3128B60E20006A527D /* AuthService.swift */,
+				968A3AF928C09A7B00358396 /* DishService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				96596F1F28B5B663006A527D /* HomeVC.swift in Sources */,
 				9629E81228BE01F8005444B0 /* DishVm.swift in Sources */,
 				96596F3D28B72497006A527D /* UIImage_Extensions.swift in Sources */,
+				968A3AFA28C09A7B00358396 /* DishService.swift in Sources */,
 				96BB1A5628B4F3C700C79981 /* String_Extensions.swift in Sources */,
 				96B4126928B8614F003CC98C /* CardView.swift in Sources */,
 				96596F3728B60E73006A527D /* Route.swift in Sources */,

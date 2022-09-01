@@ -13,8 +13,9 @@ enum Route {
     case login
     case register
     case updateAvatar(String)
-//    case placeOrder(String)
-//    case fetchCategoryDishes(String)
+    case getHomePage
+    case getDishes
+    case fetchCategoryById(String)
 //    case fetchOrders
     
     var description: String {
@@ -25,6 +26,12 @@ enum Route {
             return "/register"
         case .updateAvatar(let userId):
             return "upload-avatar?fileName=\(userId)"
+        case .getHomePage:
+            return "/api/dish/categories"
+        case .getDishes:
+            return "/api/dishes"
+        case .fetchCategoryById(let category):
+            return "/api/dish?category=\(category)"
         }
     }
 }

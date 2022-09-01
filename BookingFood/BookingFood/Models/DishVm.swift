@@ -8,8 +8,9 @@
 import Foundation
 
 struct DishVm : Codable {
+    
     let id,name: String
-    let description,image,category: String?
+    let description,category,image: String?
     let calories: Int?
     let price: Double
     
@@ -22,4 +23,5 @@ struct DishVm : Codable {
     var formattedPrice: String {
         return price.toCurrency()
     }
+    
 }

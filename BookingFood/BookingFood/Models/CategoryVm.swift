@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CategoryVm {
+struct CategoryVm: Codable {
     let name: String
     let image : String
 }

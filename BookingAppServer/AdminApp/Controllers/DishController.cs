@@ -26,12 +26,12 @@ public class DishController : Controller
         var dishes = await _context.Dishes.Select(x => new DishVm
             {
                 Id = x.Id.ToString(),
-                Category = x.Category,
+                Category = x.Category.ToString(),
                 Name = x.Name,
                 Description = x.Description,
-                Calorie = x.Calorie,
+                Calories = x.Calorie,
                 Price = x.Price,
-                ImageUrl = x.ImageUrl,
+                Image = x.ImageUrl,
                 CreatedAt = x.CreatedAt,
                 ModifiedAt = x.ModifiedAt
             })

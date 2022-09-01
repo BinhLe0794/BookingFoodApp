@@ -25,13 +25,13 @@
             <tr>
                 <td>
                     <div style="max-height: 100px; max-width: 150px">
-                        <img src="@item.ImageUrl" alt="img" width="150px" height="150px"/>
+                        <img src="@item.Image" alt="img" width="150px" height="150px"/>
                     </div>
                 </td>
                 <td>@item.Name</td>
                 <td>@item.Description</td>
                 <td>@item.Price</td>
-                <td>@item.Calorie</td>
+                <td>@item.Calories</td>
                 <td>
                     <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                 </td>
