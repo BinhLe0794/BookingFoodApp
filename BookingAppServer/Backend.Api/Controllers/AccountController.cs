@@ -122,8 +122,10 @@ public class AccountController : ControllerBase
             var token = GenerateAccessToken(claims);
             var refToken = GenerateRefreshToken();
             user.LastLogin = DateTime.Now;
+            user.AccessToken = token;
+            user.AccessTokenExpiryTime = DateTime.Now.AddDays(1);
             user.RefreshToken = refToken;
-            user.RefreshTokenExpiryTime = DateTime.Now.AddMonths(1);
+            user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
             await _userManager.UpdateAsync(user);
             var profileUser = new AccountVm
             {
@@ -196,6 +198,7 @@ public class AccountController : ControllerBase
             if (user == null)
                 return BadRequest(new ApiErrorResult<bool>($"Not Found {username}"));
             user.RefreshToken = null;
+            user.AccessToken = string.Empty;
             await _userManager.UpdateAsync(user);
             return BadRequest(new ApiSuccessResult<bool>($"Revoke {username}"));
         }
@@ -215,7 +218,7 @@ public class AccountController : ControllerBase
         var createToken = new JwtSecurityToken("https://webapi.food.com.vn",
             "https://webapi.food.com.vn",
             claims,
-            expires: DateTime.Now.AddDays(3),
+            expires: DateTime.Now.AddDays(1),
             signingCredentials: creds);
         return new JwtSecurityTokenHandler().WriteToken(createToken);
     }
