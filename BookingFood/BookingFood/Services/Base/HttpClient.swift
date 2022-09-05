@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+import ProgressHUD
 
 struct HttpClient {
 
@@ -18,11 +18,12 @@ struct HttpClient {
 
     func makingHttpRequest<T: Decodable> (route: Route,
                                           method: Method,
+                                          bodyData: Data? = nil,
                                           parameters: [String: Any]? = nil,
                                           fileImage: UIImage? = nil,
                                           completion: @escaping (Result<T, Error>) -> Void) {
         //CREATE REQUEST
-        guard let request = createRequest(route: route, method: method, parameters: parameters, fileData: fileImage) else {
+        guard let request = createRequest(route: route, method: method, bodyData: bodyData, parameters: parameters, fileData: fileImage) else {
             completion(.failure(AppError.unknownError))
             return
         }
@@ -30,15 +31,31 @@ struct HttpClient {
         URLSession.shared.dataTask(with: request) { data, response, error in
             var result: Result<Data, Error>?
 
-//            let httpResponse = response as? HTTPURLResponse
+            let httpResponse = response as? HTTPURLResponse
 
-            if let data = data {
-                result = .success(data)
-                let responseString = String(data: data, encoding: .utf8) ?? "Could not stringify data"
-                print("responseRAW: \(responseString)")
-            } else if let error = error {
-                result = .failure(error)
-                print("ErrorRAW : \(error.localizedDescription)")
+            if httpResponse?.statusCode == 401 {
+//                result = .failure(AppError.Unauthorized)
+                let token = UserDefaults.standard.getUserToken()
+                AuthService.shared.refreshTokenRequest(token) { apiResult in
+                    switch apiResult {
+                
+                    case .success(let newToken):
+                       UserDefaults.standard.refreshToken(newToken: newToken)
+                    case .failure(let error):
+                        ProgressHUD.showError("Please Login Again")
+                        print("errorRefreshToken: \(error.localizedDescription)")
+                    }
+                }
+            } else {
+                // Authorized
+                if let data = data {
+                    result = .success(data)
+                    let responseString = String(data: data, encoding: .utf8) ?? "Could not stringify data"
+                    print("responseRAW: \(responseString)")
+                } else if let error = error {
+                    result = .failure(error)
+                    print("ErrorRAW : \(error.localizedDescription)")
+                }
             }
 
             //RETURN THE RESULT
@@ -62,24 +79,30 @@ struct HttpClient {
 
             guard response != nil else {
                 let apiBool = try? decoder.decode(ApiResult<Bool>.self, from: data)
-//                print("decoded_ApiResult_bool >>>>: \(apiBool)")
-                if apiBool != nil {
-                    completion(.failure(AppError.serverError((apiBool?.message) ?? "500")))
-                } else {
+
+                guard apiBool != nil else {
                     completion(.failure(AppError.errorDecoding))
+                    return
                 }
+
+                completion(.failure(AppError.serverError((apiBool?.message) ?? "500")))
                 return
             }
-            if ((response?.isSuccessed) != nil) {
-                if let decodedData = response?.resultObj {
-                    print("decoded_resultObj >>>>: \(decodedData)")
-                    completion(.success(decodedData))
-                } else {
-                    completion(.failure(AppError.serverError(response?.message ?? "Error")))
-                }
+
+            guard ((response?.isSuccessed) != nil) && (response!.isSuccessed == true) else {
+                completion(.failure(AppError.serverError(response?.message ?? "Error")))
+                return
+            }
+            
+        
+            if let decodedData = response?.resultObj {
+                print("decoded_resultObj >>>>: \(decodedData)")
+                
+                completion(.success(decodedData))
             } else {
                 completion(.failure(AppError.serverError(response?.message ?? "Error")))
             }
+
 
         case .failure(let error):
             completion(.failure(error))
@@ -116,11 +139,12 @@ struct HttpClient {
 
     public func createRequest(route: Route,
                               method: Method,
+                              bodyData: Data? = nil,
                               parameters: [String: Any]? = nil,
                               fileData: UIImage? = nil) -> URLRequest? {
 
         let urlString = Route.baseUrl + route.description
-        let token = ""
+        let token = UserDefaults.standard.getCurrentUser()?.token ?? ""
         guard let url = URL(string: urlString) else { return nil }
 
         var urlRequest = URLRequest(url: url)
@@ -137,6 +161,7 @@ struct HttpClient {
             urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
             urlRequest.httpMethod = method.rawValue
 
+
             if let params = parameters {
                 switch method {
                 case .get:
@@ -146,10 +171,14 @@ struct HttpClient {
                         URLQueryItem(name: $0, value: "\($1)") }
                     urlRequest.url = urlComponent?.url
                 case .post, .delete, .patch:
-                    let bodyData = try? JSONSerialization.data(withJSONObject: params, options: [])
-
-                    urlRequest.httpBody = bodyData
+                    let jsonData = try? JSONSerialization.data(withJSONObject: params, options: [])
+                    urlRequest.httpBody = jsonData
                 }
+            }
+
+            //
+            if bodyData != nil {
+                urlRequest.httpBody = bodyData
             }
         }
 

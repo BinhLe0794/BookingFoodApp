@@ -10,10 +10,8 @@ public class OrderDetail
     [Key] public Guid Id { get; set; }
     [Required] [DefaultValue(1)] public int Quantity { get; set; }
     [Required] [DefaultValue(0)] public double Total { get; set; }
-
     [Required] [ForeignKey("OrderId")] public Guid OrderId { get; set; }
     public Order Order { get; set; }
-
     [Required] [ForeignKey("DishId")] public Guid DishId { get; set; }
     public Dish Dish { get; set; }
 }

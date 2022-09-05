@@ -6,82 +6,115 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class CartVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
+
     @IBOutlet weak var lbSubTotal: UILabel!
-    
+
     @IBOutlet weak var lbTotal: UILabel!
-    
-    var categories:[DishVm] = []
-    
+
+    var dishCarts: [DishCartVm] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        defaultInfo()
         registerCell()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadCart()
     }
-    private func loadCart(){
-        guard let localCarts = UserDefaults.standard.getCart() else {return}
-        
-        categories = localCarts
-        
+    private func defaultInfo() {
+        lbSubTotal.text = "0.00$"
+        lbTotal.text = "2.99$"
+    }
+    private func loadCart() {
+        guard let localCarts = UserDefaults.standard.getCart() else { return }
+
+        dishCarts = localCarts
+
         tableView.reloadData()
-        
+
         updatePrice()
     }
     private func registerCell() {
-        tableView.register(UINib(nibName: DishCell.identifier, bundle: nil), forCellReuseIdentifier: DishCell.identifier)
+        tableView.register(UINib(nibName: CartCell.identifier, bundle: nil), forCellReuseIdentifier: CartCell.identifier)
     }
     private func updatePrice() {
-        let total = categories.reduce(0) { partialResult, dish in
-            partialResult + dish.price
+        let total = dishCarts.reduce(0) { partialResult, dish in
+            partialResult + (dish.price * Double(dish.quantity))
         }
         DispatchQueue.main.async { [self] in
             lbTotal.text = (total + 2.99).toCurrency()
             lbSubTotal.text = total.toCurrency()
         }
     }
+
+
+    @IBAction func btn_Checkout_Clicked(_ sender: Any) {
+        
+        guard let user = UserDefaults.standard.getCurrentUser() else {
+            ProgressHUD.showError("Let's login")
+            return
+        }
+        print("Start Check out")
+        let request = CheckoutRequest(userId: user.id, details: dishCarts)
+
+
+        OrderService.shared.checkoutCart(request) { apiResult in
+            switch apiResult {
+            case .success(_):
+                ProgressHUD.showSuccess()
+                UserDefaults.standard.clearCart()
+                self.dismiss(animated: true)
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+                print("\(error.localizedDescription)")
+            }
+        }
+
+    }
 }
 
 extension CartVC: UITableViewDelegate, UITableViewDataSource {
-    
-    
+
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return dishCarts.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DishCell.identifier, for: indexPath) as! DishCell
-        cell.setup(categoryDishes: categories[indexPath.row])
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: CartCell.identifier, for: indexPath) as! CartCell
+
+        cell.setup(dishCarts[indexPath.row])
+
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dishDetailVC = DishDetailVC.getStoryBoardId()
         navigationController?.pushViewController(dishDetailVC, animated: true)
     }
-    
+
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            let item = categories.remove(at: indexPath.row)
+            let item = dishCarts.remove(at: indexPath.row)
+            //remove localStorage
+            UserDefaults.standard.removeCart(item.cartId)
 
-            if item.cartId != nil {
-                UserDefaults.standard.removeCart(item.cartId!)
-            }
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
             updatePrice()
         }
     }
-    
+
 }

@@ -40,6 +40,7 @@ public class ErrorWrappingMiddleware
             {
                 response.Message = "Unauthorized";
             }
+
             await context.Response.WriteAsJsonAsync(response);
         }
     }

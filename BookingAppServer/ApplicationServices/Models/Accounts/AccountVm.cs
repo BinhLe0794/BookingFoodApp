@@ -10,15 +10,16 @@ public class AccountVm
 
     public AccountVm(Account account)
     {
+        Id = account.Id;
         Fullname = account.Fullname;
         Email = account.Email;
         PhoneNumber = account.PhoneNumber;
         Token = string.Empty;
     }
 
+    public string Id { get; set; } = string.Empty;
     public string Fullname { get; set; }
     public string Email { get; set; }
-
     public string Avatar { get; set; } = string.Empty;
     public string PhoneNumber { get; set; }
     public string Token { get; set; }

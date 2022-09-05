@@ -27,7 +27,7 @@ extension UserDefaults {
         guard let value = object(forKey: UserDefaultKeys.currentUser.rawValue) else {
             return nil
         }
-        
+
         let user = try? JSONDecoder().decode(UserVm.self, from: value as! Data)
         return user
     }
@@ -37,32 +37,66 @@ extension UserDefaults {
         set(value, forKey: UserDefaultKeys.currentUser.rawValue)
     }
 
+    func getUserToken() -> TokenVm {
+        guard let value = object(forKey: UserDefaultKeys.currentUser.rawValue) else {
+            return TokenVm(accessToken: "", refreshToken: "")
+        }
+
+        let user = try? JSONDecoder().decode(UserVm.self, from: value as! Data)
+
+        guard user != nil else {
+            return TokenVm(accessToken: "", refreshToken: "")
+        }
+
+        return TokenVm(accessToken: "\(user?.token ?? "")", refreshToken: "\(user?.refreshToken ?? "")")
+
+    }
+
+    func refreshToken(newToken: TokenVm) {
+        
+        guard var user = getCurrentUser() else {
+            return
+        }
+        user.token = newToken.accessToken
+        user.refreshToken = newToken.refreshToken
+        
+        setCurrentUser(user)
+    }
+
     func removeCurrentUser() {
         removeObject(forKey: UserDefaultKeys.currentUser.rawValue)
     }
-    
-    func getCart() -> [DishVm]? {
+
+    func getCart() -> [DishCartVm]? {
         guard let value = object(forKey: UserDefaultKeys.cartInfo.rawValue) else {
             return nil
         }
-        
-        let carts = try? JSONDecoder().decode([DishVm]?.self, from: value as! Data)
-        
+
+        let carts = try? JSONDecoder().decode([DishCartVm]?.self, from: value as! Data)
+
         guard carts != nil else {
             return nil
         }
         return carts
     }
-    
-    func addCart(_ dish: DishVm) {
+
+    func addCart(_ addDish: DishCartVm) {
         let value: Data?
-        
+
         if var carts = getCart() {
-            carts.append(dish)
+            if let cartIndex = carts.firstIndex(where: { $0.dishId == addDish.dishId }) {
+                carts[cartIndex].quantity += addDish.quantity
+                if(addDish.price != carts[cartIndex].price) {
+                    carts[cartIndex].price = addDish.price
+                }
+            } else {
+                carts.append(addDish)
+            }
+            //
             value = try? JSONEncoder().encode(carts)
-        }else {
-            var newCarts: [DishVm] = []
-            newCarts.append(dish)
+        } else { // the cart is nil
+            var newCarts: [DishCartVm] = []
+            newCarts.append(addDish)
             value = try? JSONEncoder().encode(newCarts)
         }
 
@@ -70,19 +104,21 @@ extension UserDefaults {
     }
     func removeCart(_ cartId: String) {
         var value: Data?
-        
+
         if var carts = getCart() {
-            guard let removeIndex = carts.firstIndex(where: { $0.cartId == cartId} ) else {return}
+            guard let removeIndex = carts.firstIndex(where: { $0.cartId == cartId }) else { return }
             carts.remove(at: removeIndex)
             value = try? JSONEncoder().encode(carts)
         }
-        
-        guard value != nil else {return}
-        
+
+        guard value != nil else { return }
+
         set(value, forKey: UserDefaultKeys.cartInfo.rawValue)
     }
-    
-    
+    func clearCart() {
+        removeObject(forKey: UserDefaultKeys.cartInfo.rawValue)
+    }
+
     public func getValue(for key: String) -> Any? {
         return object(forKey: key)
     }

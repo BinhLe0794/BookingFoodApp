@@ -9,9 +9,12 @@ import Foundation
 import UIKit
 
 struct UserVm: Codable {
-    let id, fullname, email, avatar, phoneNumber, token,refreshToken: String?
+    let id,fullname,email,phoneNumber: String
+    var avatar, token, refreshToken: String?
 }
-
+struct TokenVm: Codable {
+    let accessToken,refreshToken: String
+}
 struct AuthService {
 
     static let shared = AuthService()
@@ -27,5 +30,17 @@ struct AuthService {
 
         HttpClientBase.makingHttpRequest(route: .register, method: .post, parameters: params, fileImage: image, completion: completion)
     }
-
+    func logoutRequest(_ token: TokenVm ,completion: @escaping (Result<Bool, Error>) -> Void) {
+        
+        let json = try? JSONEncoder().encode(token)
+        
+        HttpClientBase.makingHttpRequest(route: .logout, method: .post,bodyData: json, completion: completion)
+    }
+    
+    func refreshTokenRequest(_ token: TokenVm ,completion: @escaping (Result<TokenVm, Error>) -> Void) {
+        
+        let json = try? JSONEncoder().encode(token)
+        
+        HttpClientBase.makingHttpRequest(route: .refreshToken, method: .post,bodyData: json, completion: completion)
+    }
 }

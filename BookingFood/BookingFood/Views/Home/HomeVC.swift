@@ -38,6 +38,14 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         ProgressHUD.show()
         registerCell();
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchingData()
+    }
+    
+    private func fetchingData() {
         DishService.shared.fetchCategories { [self] apiResult in
             ProgressHUD.dismiss()
             switch apiResult {
@@ -56,7 +64,6 @@ class HomeVC: UIViewController {
             }
         }
     }
-    
     private func registerCell() {
         collectionCategories.register(UINib(nibName: CategoryCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCell.identifier)
 

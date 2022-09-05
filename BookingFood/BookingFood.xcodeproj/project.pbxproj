@@ -34,6 +34,11 @@
 		96596F3228B60E20006A527D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F3128B60E20006A527D /* AuthService.swift */; };
 		96596F3728B60E73006A527D /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F3628B60E73006A527D /* Route.swift */; };
 		96596F3D28B72497006A527D /* UIImage_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96596F3C28B72497006A527D /* UIImage_Extensions.swift */; };
+		96625DF928C3321F00297952 /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96625DF828C3321F00297952 /* OrderService.swift */; };
+		96625DFC28C476A700297952 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96625DFB28C476A700297952 /* OrderCell.swift */; };
+		96625E0128C4DCC900297952 /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96625E0028C4DCC900297952 /* OrderDetailVC.swift */; };
+		966B9B1B28C58CAC00FA821A /* OrderDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B9B1928C58CAC00FA821A /* OrderDetailCell.swift */; };
+		966B9B1C28C58CAC00FA821A /* OrderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966B9B1A28C58CAC00FA821A /* OrderDetailCell.xib */; };
 		968A3AFA28C09A7B00358396 /* DishService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968A3AF928C09A7B00358396 /* DishService.swift */; };
 		96B4126628B85B2E003CC98C /* HttpModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4126528B85B2E003CC98C /* HttpModels.swift */; };
 		96B4126928B8614F003CC98C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4126828B8614F003CC98C /* CardView.swift */; };
@@ -81,6 +86,11 @@
 		96596F3128B60E20006A527D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		96596F3628B60E73006A527D /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		96596F3C28B72497006A527D /* UIImage_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Extensions.swift; sourceTree = "<group>"; };
+		96625DF828C3321F00297952 /* OrderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderService.swift; sourceTree = "<group>"; };
+		96625DFB28C476A700297952 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		96625E0028C4DCC900297952 /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
+		966B9B1928C58CAC00FA821A /* OrderDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailCell.swift; sourceTree = "<group>"; };
+		966B9B1A28C58CAC00FA821A /* OrderDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailCell.xib; sourceTree = "<group>"; };
 		968A3AF928C09A7B00358396 /* DishService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishService.swift; sourceTree = "<group>"; };
 		96B4126528B85B2E003CC98C /* HttpModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpModels.swift; sourceTree = "<group>"; };
 		96B4126828B8614F003CC98C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -138,7 +148,10 @@
 		9629E81828BF00C8005444B0 /* OrderHistory */ = {
 			isa = PBXGroup;
 			children = (
+				96625DFD28C4C95B00297952 /* OrderDetailCell */,
+				96625DFA28C4769200297952 /* OrderCell */,
 				9629E81928BF00E3005444B0 /* OrderVC.swift */,
+				96625E0028C4DCC900297952 /* OrderDetailVC.swift */,
 			);
 			path = OrderHistory;
 			sourceTree = "<group>";
@@ -260,13 +273,31 @@
 			path = ForgetPassword;
 			sourceTree = "<group>";
 		};
-		96596F3328B60E46006A527D /* Models */ = {
+		96596F3328B60E46006A527D /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				96596F3628B60E73006A527D /* Route.swift */,
+				96596F2E28B60D98006A527D /* ApiResult.swift */,
+				96596F2C28B60D6D006A527D /* HttpClient.swift */,
 				96B4126528B85B2E003CC98C /* HttpModels.swift */,
 			);
-			path = Models;
+			path = Base;
+			sourceTree = "<group>";
+		};
+		96625DFA28C4769200297952 /* OrderCell */ = {
+			isa = PBXGroup;
+			children = (
+				96625DFB28C476A700297952 /* OrderCell.swift */,
+			);
+			path = OrderCell;
+			sourceTree = "<group>";
+		};
+		96625DFD28C4C95B00297952 /* OrderDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				966B9B1928C58CAC00FA821A /* OrderDetailCell.swift */,
+				966B9B1A28C58CAC00FA821A /* OrderDetailCell.xib */,
+			);
+			path = OrderDetailCell;
 			sourceTree = "<group>";
 		};
 		96BB1A4528B4947100C79981 /* Extensions */ = {
@@ -293,11 +324,11 @@
 		96BB1A4728B4949000C79981 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				96596F3328B60E46006A527D /* Models */,
-				96596F2C28B60D6D006A527D /* HttpClient.swift */,
-				96596F2E28B60D98006A527D /* ApiResult.swift */,
+				96596F3328B60E46006A527D /* Base */,
+				96596F3628B60E73006A527D /* Route.swift */,
 				96596F3128B60E20006A527D /* AuthService.swift */,
 				968A3AF928C09A7B00358396 /* DishService.swift */,
+				96625DF828C3321F00297952 /* OrderService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -461,6 +492,7 @@
 				9629E81728BEE6F0005444B0 /* SpecialCell.xib in Resources */,
 				9629E83128BFA79E005444B0 /* CartCell.xib in Resources */,
 				96D26EAD28B253620039C705 /* LaunchScreen.storyboard in Resources */,
+				966B9B1C28C58CAC00FA821A /* OrderDetailCell.xib in Resources */,
 				9629E81028BE01D4005444B0 /* PopularCell.xib in Resources */,
 				9629E82C28BF3A23005444B0 /* DishCell.xib in Resources */,
 				96D26EAA28B253620039C705 /* Assets.xcassets in Resources */,
@@ -518,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96596F2428B5B6E6006A527D /* AccountVC.swift in Sources */,
+				96625DF928C3321F00297952 /* OrderService.swift in Sources */,
 				96BB1A5828B4F40B00C79981 /* UIViewController_Extensions.swift in Sources */,
 				9629E81D28BF0119005444B0 /* CartVC.swift in Sources */,
 				96596F2628B5C2AD006A527D /* LoginVC.swift in Sources */,
@@ -529,6 +562,7 @@
 				968A3AFA28C09A7B00358396 /* DishService.swift in Sources */,
 				96BB1A5628B4F3C700C79981 /* String_Extensions.swift in Sources */,
 				96B4126928B8614F003CC98C /* CardView.swift in Sources */,
+				966B9B1B28C58CAC00FA821A /* OrderDetailCell.swift in Sources */,
 				96596F3728B60E73006A527D /* Route.swift in Sources */,
 				9629E81A28BF00E3005444B0 /* OrderVC.swift in Sources */,
 				96D26EA128B253610039C705 /* AppDelegate.swift in Sources */,
@@ -538,6 +572,8 @@
 				96BB1A4D28B4A49D00C79981 /* SliceVC.swift in Sources */,
 				9629E82B28BF3A23005444B0 /* DishCell.swift in Sources */,
 				96BB1A5A28B4F48C00C79981 /* UserDefault_Extensions.swift in Sources */,
+				96625DFC28C476A700297952 /* OrderCell.swift in Sources */,
+				96625E0128C4DCC900297952 /* OrderDetailVC.swift in Sources */,
 				9629E82428BF01A3005444B0 /* FullDishListVC.swift in Sources */,
 				96BB1A5028B4A92900C79981 /* UIView_Extensions.swift in Sources */,
 				96B4126628B85B2E003CC98C /* HttpModels.swift in Sources */,

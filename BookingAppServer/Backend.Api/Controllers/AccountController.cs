@@ -114,17 +114,20 @@ public class AccountController : ControllerBase
             {
                 return BadRequest(new ApiErrorResult<AccountVm>("Login Failed"));
             }
-            var claims = new[]{
+
+            var claims = new[]
+            {
                 new Claim(ClaimTypes.Name, user.UserName),
             };
             var token = GenerateAccessToken(claims);
             var refToken = GenerateRefreshToken();
             user.LastLogin = DateTime.Now;
             user.RefreshToken = refToken;
-            user.RefreshTokenExpiryTime = DateTime.Now.AddHours(3);
+            user.RefreshTokenExpiryTime = DateTime.Now.AddMonths(1);
             await _userManager.UpdateAsync(user);
             var profileUser = new AccountVm
             {
+                Id = user.Id,
                 Fullname = user.Fullname,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
@@ -140,6 +143,7 @@ public class AccountController : ControllerBase
             return BadRequest(new ApiException<bool>(e));
         }
     }
+
     // [HttpGet("{userId}")]
     // [ApiValidationFilter]
     // public async Task<IActionResult> GetUserInfo(string userId)
@@ -187,7 +191,8 @@ public class AccountController : ControllerBase
                 return BadRequest(new ApiErrorResult<TokenApiModel>("RefreshToken is not match"));
             if (user.RefreshTokenExpiryTime <= DateTime.Now)
                 return BadRequest(new ApiErrorResult<TokenApiModel>("RefreshToken has expired"));
-            var claims = new[]{
+            var claims = new[]
+            {
                 new Claim(ClaimTypes.Name, user.UserName),
             };
             var newAccessToken = GenerateAccessToken(claims);
@@ -206,6 +211,7 @@ public class AccountController : ControllerBase
             return BadRequest(new ApiException<bool>(e));
         }
     }
+
     [ApiValidationFilter]
     [HttpPost("/logout")]
     public async Task<IActionResult> RevokeToken(TokenApiModel request)
@@ -229,6 +235,7 @@ public class AccountController : ControllerBase
     }
 
     #region Private function
+
     private static string GenerateAccessToken(IEnumerable<Claim> claims)
     {
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("0123456789ABCDEF"));
@@ -237,11 +244,12 @@ public class AccountController : ControllerBase
         var createToken = new JwtSecurityToken("https://webapi.food.com.vn",
             "https://webapi.food.com.vn",
             claims,
-            expires: DateTime.Now.AddHours(3),
+            expires: DateTime.Now.AddSeconds(15),
             signingCredentials: creds);
         return new JwtSecurityTokenHandler().WriteToken(createToken);
     }
-    public static string GenerateRefreshToken()
+
+    private static string GenerateRefreshToken()
     {
         var randomNumber = new byte[32];
         using (var rng = RandomNumberGenerator.Create())
@@ -250,7 +258,8 @@ public class AccountController : ControllerBase
             return Convert.ToBase64String(randomNumber);
         }
     }
-    public static ClaimsPrincipal GetPrincipalFromExpiredToken(string jwtToken)
+
+    private static ClaimsPrincipal GetPrincipalFromExpiredToken(string jwtToken)
     {
         IdentityModelEventSource.ShowPII = true;
         SecurityToken validatedToken;
@@ -262,13 +271,14 @@ public class AccountController : ControllerBase
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("0123456789ABCDEF"))
         };
         var principal
-           = new JwtSecurityTokenHandler().ValidateToken(jwtToken, validationParameters, out validatedToken);
+            = new JwtSecurityTokenHandler().ValidateToken(jwtToken, validationParameters, out validatedToken);
         var jwtSecurityToken = validatedToken as JwtSecurityToken;
         if (jwtSecurityToken == null || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256,
-           StringComparison.InvariantCultureIgnoreCase))
+                StringComparison.InvariantCultureIgnoreCase))
             throw new SecurityTokenException("Invalid token");
         return principal;
     }
+
     private async Task<string?> SaveAvatar(IFormFile file, string userId)
     {
         try

@@ -22,6 +22,7 @@ class AccountVC: UIViewController {
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var lbOr: UILabel!
+    
     var isLogin: Bool {
         get {
             let user = UserDefaults.standard.getCurrentUser()
@@ -46,7 +47,6 @@ class AccountVC: UIViewController {
         ProgressHUD.show()
         if !isLogin {
             setViewDefault()
-            ProgressHUD.showFailed("No User", interaction: true)
         }
         else {
             let user = UserDefaults.standard.getCurrentUser()
@@ -70,7 +70,8 @@ class AccountVC: UIViewController {
         navigationController?.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(loginController, animated: true)
     }
-    func setViewDefault() {
+    
+    private func setViewDefault() {
         lbName.text = "Guest"
         lbEmail.text = "No Email"
         lbPhone.text = "N/A"
@@ -84,15 +85,15 @@ class AccountVC: UIViewController {
         lbOr.isHidden = false
         btnRegister.isHidden = false
     }
-    func setUserView(_ user: UserVm) {
+    private func setUserView(_ user: UserVm) {
         guard user.token != nil else {
             setViewDefault()
             return
         }
     
-        lbName.text = "\(user.fullname ?? "\("Guest")")"
-        lbEmail.text = "\(user.email ?? "\("No Email")")"
-        lbPhone.text = "\(user.phoneNumber ?? "\("N/A")")"
+        lbName.text = "\(user.fullname )"
+        lbEmail.text = "\(user.email )"
+        lbPhone.text = "\(user.phoneNumber )"
         lbOrder.text = "0"
         lbLastOrder.text = "N/A"
         if let avatar = UIImage(contentsOfFile: user.avatar!) {

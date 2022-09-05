@@ -8,6 +8,7 @@ using ApplicationServices.Models.Common;
 using ApplicationServices.Models.Enums;
 using ApplicationServices.Models.Menu;
 using Backend.Api.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -70,6 +71,7 @@ namespace Backend.Api.Controllers
                     return CategoryEnums.Common;
             }
         }
+
         [HttpGet("categories")]
         public async Task<IActionResult> GetCategories()
         {
@@ -139,6 +141,7 @@ namespace Backend.Api.Controllers
                 return BadRequest(new ApiException<bool>(e));
             }
         }
+
         [HttpGet("/api/dishes")]
         public async Task<IActionResult> GetDishByCategories()
         {
@@ -162,6 +165,5 @@ namespace Backend.Api.Controllers
                 return BadRequest(new ApiException<bool>(e));
             }
         }
-        
     }
 }

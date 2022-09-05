@@ -34,17 +34,19 @@ class DishDetailVC: UIViewController {
         lbCalories.text = currentDish.formattedCalories
         lbQuantity.text = "\(btnStepper.value)"
     }
+    
     @IBAction func btnStepper_Clicked(_ sender: Any) {
         lbQuantity.text = "\(btnStepper.value)"
     }
+    
     @IBAction func btnAdd_Clicked(_ sender: Any) {
         
         let count = Int(btnStepper.value)
         
-        for _ in 1...count {
-            currentDish.cartId = UUID().uuidString
-            UserDefaults.standard.addCart(currentDish)
-        }
+        let addDish = DishCartVm(cartId: UUID().uuidString, dishId: currentDish.id, name: currentDish.name
+                                 , quantity: count, price: currentDish.price, image: currentDish.image)
+        UserDefaults.standard.addCart(addDish)
+        
         ProgressHUD.showSuccess()
     }
     
