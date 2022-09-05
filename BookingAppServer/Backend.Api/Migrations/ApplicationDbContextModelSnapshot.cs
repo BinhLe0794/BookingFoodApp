@@ -4,18 +4,16 @@ using ApplicationServices.Config;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace AdminApp.Migrations
+namespace Backend.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220822021411_changeCategoryEnums")]
-    partial class changeCategoryEnums
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,7 +22,7 @@ namespace AdminApp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("AdminApp.Entities.Account", b =>
+            modelBuilder.Entity("ApplicationServices.Entities.Account", b =>
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(50)
@@ -33,6 +31,13 @@ namespace AdminApp.Migrations
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
+
+                    b.Property<string>("AccessToken")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("AccessTokenExpiryTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -105,7 +110,7 @@ namespace AdminApp.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
-            modelBuilder.Entity("AdminApp.Entities.Dish", b =>
+            modelBuilder.Entity("ApplicationServices.Entities.Dish", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -137,20 +142,15 @@ namespace AdminApp.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<Guid?>("OrderId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrderId");
-
                     b.ToTable("Dishes");
                 });
 
-            modelBuilder.Entity("AdminApp.Entities.Order", b =>
+            modelBuilder.Entity("ApplicationServices.Entities.Order", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -166,6 +166,25 @@ namespace AdminApp.Migrations
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
 
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("ApplicationServices.Entities.OrderDetail", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("DishId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
@@ -174,9 +193,11 @@ namespace AdminApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AccountId");
+                    b.HasIndex("DishId");
 
-                    b.ToTable("Orders");
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -314,24 +335,34 @@ namespace AdminApp.Migrations
                     b.ToTable("UserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("AdminApp.Entities.Dish", b =>
+            modelBuilder.Entity("ApplicationServices.Entities.Order", b =>
                 {
-                    b.HasOne("AdminApp.Entities.Order", "Order")
-                        .WithMany("Dishes")
-                        .HasForeignKey("OrderId");
-
-                    b.Navigation("Order");
-                });
-
-            modelBuilder.Entity("AdminApp.Entities.Order", b =>
-                {
-                    b.HasOne("AdminApp.Entities.Account", "Account")
+                    b.HasOne("ApplicationServices.Entities.Account", "Account")
                         .WithMany("Orders")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Account");
+                });
+
+            modelBuilder.Entity("ApplicationServices.Entities.OrderDetail", b =>
+                {
+                    b.HasOne("ApplicationServices.Entities.Dish", "Dish")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("DishId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ApplicationServices.Entities.Order", "Order")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Dish");
+
+                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -345,7 +376,7 @@ namespace AdminApp.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("AdminApp.Entities.Account", null)
+                    b.HasOne("ApplicationServices.Entities.Account", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -354,7 +385,7 @@ namespace AdminApp.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("AdminApp.Entities.Account", null)
+                    b.HasOne("ApplicationServices.Entities.Account", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -369,7 +400,7 @@ namespace AdminApp.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AdminApp.Entities.Account", null)
+                    b.HasOne("ApplicationServices.Entities.Account", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -378,21 +409,26 @@ namespace AdminApp.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("AdminApp.Entities.Account", null)
+                    b.HasOne("ApplicationServices.Entities.Account", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("AdminApp.Entities.Account", b =>
+            modelBuilder.Entity("ApplicationServices.Entities.Account", b =>
                 {
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("AdminApp.Entities.Order", b =>
+            modelBuilder.Entity("ApplicationServices.Entities.Dish", b =>
                 {
-                    b.Navigation("Dishes");
+                    b.Navigation("OrderDetails");
+                });
+
+            modelBuilder.Entity("ApplicationServices.Entities.Order", b =>
+                {
+                    b.Navigation("OrderDetails");
                 });
 #pragma warning restore 612, 618
         }

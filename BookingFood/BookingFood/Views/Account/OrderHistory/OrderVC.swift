@@ -29,6 +29,7 @@ class OrderVC: UIViewController {
             fetchingData()
         } else {
             ProgressHUD.showError("Let's login first")
+            orders = []
             refreshView()
         }
             

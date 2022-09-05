@@ -10,40 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebd6ee13-2a29-48fe-a0d3-aaf5e0e30199" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ApplicationServices/Requests/Orders/CheckoutOrderRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApplicationServices/Requests/Orders/OrderDetailRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend.Api/Controllers/OrderController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Services/OrderService.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Account/OrderHistory/OrderCell/OrderCell.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Account/OrderHistory/OrderDetailCell/OrderDetailCell.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Account/OrderHistory/OrderDetailCell/OrderDetailCell.xib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Account/OrderHistory/OrderDetailVC.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend.Api/Images/4fa7eb70-25cc-42a2-a760-f1791f7ea107.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend.Api/Images/a97d20b3-4e7d-4236-b73c-4a898d530ac5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Components/AlertComponent/AlertComponent.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookingAppServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookingAppServer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/AdminApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/AdminApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Controllers/OrderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AdminApp/Views/Order/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/Order/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApplicationServices/ApplicationServices.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/ApplicationServices.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationServices/Entities/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Entities/Order.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationServices/Entities/OrderDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Entities/OrderDetail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationServices/Models/Accounts/AccountVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Accounts/AccountVm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationServices/Models/Menu/OrderDetailVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Menu/OrderDetailVm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationServices/Models/Menu/OrderVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Menu/OrderVm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend.Api/Backend.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Backend.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationServices/Entities/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Entities/Account.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend.Api/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend.Api/Controllers/DishController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Controllers/DishController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend.Api/Extensions/ErrorWrappingMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Extensions/ErrorWrappingMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend.Api/Models/TokenApiModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Models/TokenApiModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend.Api/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Controllers/OrderController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Base.lproj/Main.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Extensions/UserDefault_Extensions.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Extensions/UserDefault_Extensions.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Services/ApiResult.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Services/Base/ApiResult.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Services/AuthService.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Services/AuthService.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Services/HttpClient.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Services/Base/HttpClient.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Services/Models/HttpModels.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Services/Base/HttpModels.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Services/Models/Route.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Services/Route.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Account/AccountVC.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Account/AccountVC.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Account/OrderHistory/OrderVC.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Account/OrderHistory/OrderVC.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Cart/CartCell/CartCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Cart/CartCell/CartCell.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Cart/CartCell/CartCell.xib" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Cart/CartCell/CartCell.xib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Cart/CartVC.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Cart/CartVC.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/DishDetail/DishDetailVC.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/DishDetail/DishDetailVC.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +33,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dd736c244e584a0eb1a743f5de7f6ec2200ba0/9b/e7e79529/TemporaryULongValueGenerator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/37a954845b52703c5cce1aacf8fa1292378878e82bf68c4c4b5effc447316e9/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/393696b835369433af8f8f61443a9c3df60245e97715cd6b6a746c79ec99a4b/FileExtensionsAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
@@ -79,7 +62,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.23922734",
+    "XThreadsFramesViewSplitterKey": "0.23179792",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -150,7 +133,7 @@
       <workItem from="1662014435832" duration="63000" />
       <workItem from="1662014664497" duration="1346000" />
       <workItem from="1662016026363" duration="8394000" />
-      <workItem from="1662176988577" duration="28333000" />
+      <workItem from="1662176988577" duration="33283000" />
     </task>
     <servers />
   </component>

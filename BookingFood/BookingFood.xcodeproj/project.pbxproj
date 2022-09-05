@@ -39,6 +39,7 @@
 		96625E0128C4DCC900297952 /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96625E0028C4DCC900297952 /* OrderDetailVC.swift */; };
 		966B9B1B28C58CAC00FA821A /* OrderDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B9B1928C58CAC00FA821A /* OrderDetailCell.swift */; };
 		966B9B1C28C58CAC00FA821A /* OrderDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966B9B1A28C58CAC00FA821A /* OrderDetailCell.xib */; };
+		966B9B2228C5F62A00FA821A /* AlertComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966B9B2128C5F62A00FA821A /* AlertComponent.swift */; };
 		968A3AFA28C09A7B00358396 /* DishService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968A3AF928C09A7B00358396 /* DishService.swift */; };
 		96B4126628B85B2E003CC98C /* HttpModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4126528B85B2E003CC98C /* HttpModels.swift */; };
 		96B4126928B8614F003CC98C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4126828B8614F003CC98C /* CardView.swift */; };
@@ -91,6 +92,7 @@
 		96625E0028C4DCC900297952 /* OrderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailVC.swift; sourceTree = "<group>"; };
 		966B9B1928C58CAC00FA821A /* OrderDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailCell.swift; sourceTree = "<group>"; };
 		966B9B1A28C58CAC00FA821A /* OrderDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailCell.xib; sourceTree = "<group>"; };
+		966B9B2128C5F62A00FA821A /* AlertComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertComponent.swift; sourceTree = "<group>"; };
 		968A3AF928C09A7B00358396 /* DishService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishService.swift; sourceTree = "<group>"; };
 		96B4126528B85B2E003CC98C /* HttpModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpModels.swift; sourceTree = "<group>"; };
 		96B4126828B8614F003CC98C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -300,6 +302,14 @@
 			path = OrderDetailCell;
 			sourceTree = "<group>";
 		};
+		966B9B2028C5F61100FA821A /* AlertComponent */ = {
+			isa = PBXGroup;
+			children = (
+				966B9B2128C5F62A00FA821A /* AlertComponent.swift */,
+			);
+			path = AlertComponent;
+			sourceTree = "<group>";
+		};
 		96BB1A4528B4947100C79981 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +360,7 @@
 		96BB1A4A28B494D500C79981 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				966B9B2028C5F61100FA821A /* AlertComponent */,
 				96B4126828B8614F003CC98C /* CardView.swift */,
 			);
 			path = Components;
@@ -567,6 +578,7 @@
 				9629E81A28BF00E3005444B0 /* OrderVC.swift in Sources */,
 				96D26EA128B253610039C705 /* AppDelegate.swift in Sources */,
 				9629E82728BF0224005444B0 /* DishDetailVC.swift in Sources */,
+				966B9B2228C5F62A00FA821A /* AlertComponent.swift in Sources */,
 				9629E81628BEE6F0005444B0 /* SpecialCell.swift in Sources */,
 				96BB1A5428B4C0B900C79981 /* SliceCVC.swift in Sources */,
 				96BB1A4D28B4A49D00C79981 /* SliceVC.swift in Sources */,

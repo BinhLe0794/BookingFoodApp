@@ -22,7 +22,7 @@ class AccountVC: UIViewController {
     @IBOutlet weak var btnSignIn: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var lbOr: UILabel!
-    
+
     var isLogin: Bool {
         get {
             let user = UserDefaults.standard.getCurrentUser()
@@ -44,7 +44,7 @@ class AccountVC: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        ProgressHUD.show()
+
         if !isLogin {
             setViewDefault()
         }
@@ -58,54 +58,77 @@ class AccountVC: UIViewController {
 
     @IBAction func btnSignIn_Clicked(_ sender: Any) {
         if isLogin {
-            print("Logout")
-            UserDefaults.standard.removeCurrentUser()
+            logoutServer()
         }
         pushToLogin()
     }
 
+    private func logoutServer() {
 
-    private func pushToLogin() {
-        let loginController = LoginVC.getStoryBoardId()
-        navigationController?.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(loginController, animated: true)
-    }
-    
-    private func setViewDefault() {
-        lbName.text = "Guest"
-        lbEmail.text = "No Email"
-        lbPhone.text = "N/A"
-        lbOrder.text = "0"
-        lbLastOrder.text = "N/A"
-        
-        btnSignIn.setTitle("Let's Sign In", for: .normal)
-        btnSignIn.setTitleColor(.white, for: .normal)
-        btnSignIn.backgroundColor = .black
-        
-        lbOr.isHidden = false
-        btnRegister.isHidden = false
-    }
-    private func setUserView(_ user: UserVm) {
-        guard user.token != nil else {
-            setViewDefault()
-            return
+        let result = AlertComponent().AlertConfirmation(title: "Information", message: "Sign Out this account") { action in
+            
+            let token = UserDefaults.standard.getUserToken()
+            
+            AuthService.shared.logoutRequest(token) { apiResult in
+                switch apiResult {
+                    
+                case .success(_):
+                    print("Logut Success")
+                case .failure(let error):
+                    print("Logout Failed")
+                }
+            }
+            UserDefaults.standard.removeCurrentUser()
+            self.pushToLogin()
         }
-    
-        lbName.text = "\(user.fullname )"
-        lbEmail.text = "\(user.email )"
-        lbPhone.text = "\(user.phoneNumber )"
-        lbOrder.text = "0"
-        lbLastOrder.text = "N/A"
-        if let avatar = UIImage(contentsOfFile: user.avatar!) {
-            imgAvatar.image = avatar
-        }else {
+            self.present(result, animated: true)
+            
+        }
+
+        private func pushToLogin() {
+            let loginController = LoginVC.getStoryBoardId()
+            navigationController?.modalPresentationStyle = .fullScreen
+            navigationController?.pushViewController(loginController, animated: true)
+        }
+
+
+
+        private func setViewDefault() {
+            lbName.text = "Guest"
+            lbEmail.text = "No Email"
+            lbPhone.text = "N/A"
+            lbOrder.text = "0"
+            lbLastOrder.text = "N/A"
             imgAvatar.image = UIImage(named: "logo")
-        }
 
-        lbOr.isHidden = true
-        btnRegister.isHidden = true
-        btnSignIn.setTitle("Logout", for: .normal)
-        btnSignIn.setTitleColor(.red, for: .normal)
-        btnSignIn.backgroundColor = .darkGray
+            btnSignIn.setTitle("Let's Sign In", for: .normal)
+            btnSignIn.setTitleColor(.white, for: .normal)
+            btnSignIn.backgroundColor = .black
+
+            lbOr.isHidden = false
+            btnRegister.isHidden = false
+        }
+        private func setUserView(_ user: UserVm) {
+            guard user.token != nil else {
+                setViewDefault()
+                return
+            }
+
+            lbName.text = "\(user.fullname)"
+            lbEmail.text = "\(user.email)"
+            lbPhone.text = "\(user.phoneNumber)"
+            lbOrder.text = "0"
+            lbLastOrder.text = "N/A"
+            if let avatar = UIImage(contentsOfFile: user.avatar!) {
+                imgAvatar.image = avatar
+            } else {
+                imgAvatar.image = UIImage(named: "logo")
+            }
+
+            lbOr.isHidden = true
+            btnRegister.isHidden = true
+            btnSignIn.setTitle("Logout", for: .normal)
+            btnSignIn.setTitleColor(.red, for: .normal)
+            btnSignIn.backgroundColor = .darkGray
+        }
     }
-}

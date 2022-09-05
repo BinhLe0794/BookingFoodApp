@@ -144,35 +144,6 @@ public class AccountController : ControllerBase
         }
     }
 
-    // [HttpGet("{userId}")]
-    // [ApiValidationFilter]
-    // public async Task<IActionResult> GetUserInfo(string userId)
-    // {
-    //     try
-    //     {
-    //         if (string.IsNullOrEmpty(userId))
-    //         {
-    //             return BadRequest(new ApiErrorResult<AccountVm>("Check your request"));
-    //         }
-    //         var user = await _userManager.FindByIdAsync(userId);
-    //         if (user == null)
-    //         {
-    //             return BadRequest(new ApiErrorResult<AccountVm>("Invalid User"));
-    //         }
-    //         var userVm = new AccountVm()
-    //         {
-    //             Fullname = user.Fullname,
-    //             PhoneNumber = user.PhoneNumber,
-    //             Email = user.Email,
-    //             Avatar = ""
-    //         };
-    //         return Ok(new ApiSuccessResult<AccountVm>(userVm));
-    //     }
-    //     catch (Exception e)
-    //     {
-    //         return BadRequest(new ApiException<bool>(e));
-    //     }
-    // }
     [HttpPost("/refresh-token")]
     [ApiValidationFilter]
     [AllowAnonymous]
@@ -244,7 +215,7 @@ public class AccountController : ControllerBase
         var createToken = new JwtSecurityToken("https://webapi.food.com.vn",
             "https://webapi.food.com.vn",
             claims,
-            expires: DateTime.Now.AddSeconds(15),
+            expires: DateTime.Now.AddDays(3),
             signingCredentials: creds);
         return new JwtSecurityTokenHandler().WriteToken(createToken);
     }

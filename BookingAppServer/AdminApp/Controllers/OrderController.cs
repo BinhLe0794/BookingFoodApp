@@ -21,18 +21,9 @@ public class OrderController : Controller
         var orders = await _context.Orders.Include(x => x.Account)
             .Select(x => new OrderVm
             {
-                Id = x.Id,
-                AccountId = x.AccountId,
-                Account = new AccountVm
-                {
-                    Avatar = x.Account.UserName,
-                    Email = x.Account.Email,
-                    PhoneNumber = x.Account.PhoneNumber,
-                    Fullname = x.Account.Fullname
-                },
+                Id = x.Id.ToString(),
                 OrderDetails = new List<OrderDetailVm>(),
-                CreatedAt = x.CreatedAt,
-                ModifiedAt = x.ModifiedAt
+                CreatedAt = x.CreatedAt.ToShortDateString(),
             }).ToListAsync();
 
         return View(orders);

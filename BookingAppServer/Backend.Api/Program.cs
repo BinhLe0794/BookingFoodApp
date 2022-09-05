@@ -17,7 +17,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options => { options.SuppressMode
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 //1. Đăng ký DBCONTEXT
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer(connectionString, migrations => migrations.MigrationsAssembly("Backend.Api")));
 //2. Đăng ký IDENTITY CORE
 builder.Services.AddIdentity<Account, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()

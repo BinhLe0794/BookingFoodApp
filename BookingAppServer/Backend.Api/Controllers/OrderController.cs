@@ -36,6 +36,7 @@ namespace Backend.Api.Controllers
                 {
                     return BadRequest(new ApiErrorResult<bool>("The Cart cannot be empty"));
                 }
+
                 var order = new Order()
                 {
                     Id = Guid.NewGuid(),
@@ -85,7 +86,9 @@ namespace Backend.Api.Controllers
 
                 var orders = await _context.Orders
                     .Where(x => x.AccountId == userId)
-                    .Include(x => x.OrderDetails).Select(x => new OrderVm()
+                    .Include(x => x.OrderDetails)
+                    .OrderByDescending(x => x.CreatedAt)
+                    .Select(x => new OrderVm()
                     {
                         Id = x.Id.ToString(),
                         OrderDetails = new List<OrderDetailVm>(),

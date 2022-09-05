@@ -61,10 +61,11 @@ class CartVC: UIViewController {
             ProgressHUD.showError("Let's login")
             return
         }
-        print("Start Check out")
+        
+        loadCart()
+        
         let request = CheckoutRequest(userId: user.id, details: dishCarts)
-
-
+        print(request)
         OrderService.shared.checkoutCart(request) { apiResult in
             switch apiResult {
             case .success(_):

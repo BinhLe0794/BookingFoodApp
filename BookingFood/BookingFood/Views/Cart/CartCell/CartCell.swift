@@ -17,7 +17,10 @@ class CartCell: UITableViewCell {
     @IBOutlet weak var lbPrice: UILabel!
     @IBOutlet weak var btnStepper: UIStepper!
     
+    private var _dishCart: DishCartVm? = nil
+    
     func setup(_ dishCart: DishCartVm){
+        _dishCart = dishCart
         imgView.kf.setImage(with: dishCart.image?.toUrl)
         lbName.text = dishCart.name
         lbQuantity.text = dishCart.formattedQuantity
@@ -26,5 +29,10 @@ class CartCell: UITableViewCell {
     }
     @IBAction func btnStepper_Clicked(_ sender: Any) {
         lbQuantity.text = "\(Int(btnStepper.value))"
+        _dishCart?.quantity = Int(btnStepper.value)
+        
+        UserDefaults.standard.removeCart(_dishCart!.cartId)
+        UserDefaults.standard.addCart(_dishCart!)
+        
     }
 }

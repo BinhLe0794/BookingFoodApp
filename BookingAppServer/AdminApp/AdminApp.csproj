@@ -20,9 +20,6 @@
     <ItemGroup>
       <_ContentIncludedByDefault Remove="wwwroot\js\site.js" />
     </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\ApplicationServices\ApplicationServices.csproj" />
-    </ItemGroup>
+    
 
 </Project>
