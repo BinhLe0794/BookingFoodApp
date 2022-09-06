@@ -128,7 +128,7 @@ class AccountVC: UIViewController {
             lbOr.isHidden = true
             btnRegister.isHidden = true
             btnSignIn.setTitle("Logout", for: .normal)
-            btnSignIn.setTitleColor(.red, for: .normal)
+            btnSignIn.setTitleColor(.red, for: .normal)shcasdasdssssssssasdasdasdasdsa
             btnSignIn.backgroundColor = .darkGray
         }
     }

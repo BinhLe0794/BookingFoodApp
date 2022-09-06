@@ -10,22 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebd6ee13-2a29-48fe-a0d3-aaf5e0e30199" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend.Api/Images/4fa7eb70-25cc-42a2-a760-f1791f7ea107.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend.Api/Images/a97d20b3-4e7d-4236-b73c-4a898d530ac5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Components/AlertComponent/AlertComponent.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend.Api/Images/a66816a3-ec6b-4da1-bedf-bccd185dacdb.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookingAppServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookingAppServer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminApp/AdminApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/AdminApp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminApp/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Controllers/OrderController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdminApp/Views/Order/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AdminApp/Views/Order/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApplicationServices/ApplicationServices.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/ApplicationServices.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationServices/Entities/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Entities/Account.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend.Api/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend.Api/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Controllers/OrderController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend.Api/Backend.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/Backend.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend.Api/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.Api/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Account/AccountVC.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Account/AccountVC.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Account/OrderHistory/OrderVC.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Account/OrderHistory/OrderVC.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Cart/CartCell/CartCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Cart/CartCell/CartCell.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Cart/CartVC.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../BookingFood/BookingFood/Views/Cart/CartVC.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +53,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.23179792",
+    "XThreadsFramesViewSplitterKey": "0.2746479",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -77,7 +68,11 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Backend.Api">
+  <component name="RunManager" selected="Publish to folder.Publish Backend.Api to folder">
+    <configuration name="Publish Backend.Api to folder" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" delete_existing_files="true" platform="Any CPU" runtime="Portable" target_folder="$PROJECT_DIR$/Backend.Api/bin/Release/net6.0/publish" target_framework="net6.0" uuid_high="2862308978399068957" uuid_low="-8679016564322316881" />
+      <method v="2" />
+    </configuration>
     <configuration name="AdminApp" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/AdminApp/AdminApp.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -111,6 +106,7 @@
     <list>
       <item itemvalue=".NET Launch Settings Profile.AdminApp" />
       <item itemvalue=".NET Launch Settings Profile.Backend.Api" />
+      <item itemvalue="Publish to folder.Publish Backend.Api to folder" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -133,7 +129,7 @@
       <workItem from="1662014435832" duration="63000" />
       <workItem from="1662014664497" duration="1346000" />
       <workItem from="1662016026363" duration="8394000" />
-      <workItem from="1662176988577" duration="33283000" />
+      <workItem from="1662176988577" duration="39416000" />
     </task>
     <servers />
   </component>
