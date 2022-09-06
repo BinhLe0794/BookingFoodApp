@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Api", "Backend.Api\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationServices", "ApplicationServices\ApplicationServices.csproj", "{39688969-B166-41EC-8D2E-49CC15D9B953}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodAppServer", "FoodAppServer\FoodAppServer.csproj", "{DC692071-FA99-4318-995F-902EC7BB9321}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{39688969-B166-41EC-8D2E-49CC15D9B953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39688969-B166-41EC-8D2E-49CC15D9B953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39688969-B166-41EC-8D2E-49CC15D9B953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC692071-FA99-4318-995F-902EC7BB9321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC692071-FA99-4318-995F-902EC7BB9321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC692071-FA99-4318-995F-902EC7BB9321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC692071-FA99-4318-995F-902EC7BB9321}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

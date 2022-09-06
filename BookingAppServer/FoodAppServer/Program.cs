@@ -1,6 +1,6 @@
 using ApplicationServices.Config;
 using ApplicationServices.Entities;
-using Backend.Api.Extensions;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -11,14 +11,12 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-builder.Services.AddMvc();
-
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();;
 builder.Services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 //1. Đăng ký DBCONTEXT
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString, migrations => migrations.MigrationsAssembly("Backend.Api")));
+    options.UseSqlServer(connectionString, migrations => migrations.MigrationsAssembly("FoodAppServer")));
 //2. Đăng ký IDENTITY CORE
 builder.Services.AddIdentity<Account, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -74,8 +72,13 @@ var signingKey = "0123456789ABCDEF";
 var signingKeyBytes = System.Text.Encoding.UTF8.GetBytes(signingKey);
 builder.Services.AddAuthentication(opt =>
     {
-        opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        opt.DefaultAuthenticateScheme = "Cookies";
         opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddCookie("Cookies", opt =>
+    {
+        opt.LoginPath = "/login";
+        opt.AccessDeniedPath = "/AccessDenied";
     })
     .AddJwtBearer(options =>
     {
@@ -93,18 +96,29 @@ builder.Services.AddAuthentication(opt =>
             IssuerSigningKey = new SymmetricSecurityKey(signingKeyBytes)
         };
     });
+builder.Services.AddSession(options => { options.IdleTimeout = TimeSpan.FromMinutes(30); });
 var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
 
 app.UseSwagger();
 app.UseSwaggerUI();
-app.UseStaticFiles();
 app.UseHttpsRedirection();
-app.UseErrorWrapping(); // 
+app.UseStaticFiles();
 app.UseAuthentication();
+app.UseAuthorization();
+app.UseSession();
+app.UseRouting();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    "default",
-    "{controller=Admin}/{action=Index}/{id?}");
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
