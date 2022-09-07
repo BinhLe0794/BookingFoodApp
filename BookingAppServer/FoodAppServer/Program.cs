@@ -1,17 +1,20 @@
 using ApplicationServices.Config;
 using ApplicationServices.Entities;
+using FoodAppServer.Extensions;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Net.Http.Headers;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();;
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddHttpContextAccessor(); // Lấy thông tin user trong code
 builder.Services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 //1. Đăng ký DBCONTEXT
@@ -70,17 +73,20 @@ builder.Services.AddSwaggerGen(c =>
 var issuer = "https://webapi.food.com.vn";
 var signingKey = "0123456789ABCDEF";
 var signingKeyBytes = System.Text.Encoding.UTF8.GetBytes(signingKey);
-builder.Services.AddAuthentication(opt =>
+builder.Services.AddAuthentication(options =>
+        {
+            options.DefaultScheme = "JWT_OR_COOKIE";
+            options.DefaultChallengeScheme = "JWT_OR_COOKIE";
+        }
+    )
+    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
     {
-        opt.DefaultAuthenticateScheme = "Cookies";
-        opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.Cookie.HttpOnly = true;
+        options.LoginPath = "/Home/Login";
+        options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+        options.SlidingExpiration = true;
     })
-    .AddCookie("Cookies", opt =>
-    {
-        opt.LoginPath = "/login";
-        opt.AccessDeniedPath = "/AccessDenied";
-    })
-    .AddJwtBearer(options =>
+    .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
     {
         options.RequireHttpsMetadata = false;
         options.SaveToken = true;
@@ -95,7 +101,19 @@ builder.Services.AddAuthentication(opt =>
             ClockSkew = System.TimeSpan.Zero,
             IssuerSigningKey = new SymmetricSecurityKey(signingKeyBytes)
         };
+    })
+    .AddPolicyScheme("JWT_OR_COOKIE", "JWT_OR_COOKIE", options =>
+    {
+        options.ForwardDefaultSelector = context =>
+        {
+            string authorization = context.Request.Headers[HeaderNames.Authorization];
+            if (!string.IsNullOrEmpty(authorization) && authorization.StartsWith("Bearer "))
+                return JwtBearerDefaults.AuthenticationScheme;
+
+            return CookieAuthenticationDefaults.AuthenticationScheme;
+        };
     });
+;
 builder.Services.AddSession(options => { options.IdleTimeout = TimeSpan.FromMinutes(30); });
 var app = builder.Build();
 
@@ -112,6 +130,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseErrorWrapping(); // 
 app.UseSession();
 app.UseRouting();
 

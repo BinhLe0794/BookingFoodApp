@@ -16,10 +16,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace FoodAppServer.Controllers;
 
-[Route("api/[controller]")]
-[ApiController]
-[Authorize]
-public class AccountController : ControllerBase
+public class AccountController : AuthAPIController
 {
     private readonly RoleManager<IdentityRole> _roleManager;
     private readonly SignInManager<Account> _signInManager;
@@ -136,7 +133,8 @@ public class AccountController : ControllerBase
                 Token = token,
                 RefreshToken = refToken
             };
-            profileUser.Avatar = GetAvatar(user.Id);
+            var basePath = _environment.WebRootPath;
+            profileUser.Avatar = GetAvatar(user.Id, basePath);
             var result = new ApiSuccessResult<AccountVm>(profileUser);
             return Ok(result);
         }
@@ -266,14 +264,14 @@ public class AccountController : ControllerBase
                 return null;
             }
 
-            var uploadsRootFolder = Path.Combine(_environment.ContentRootPath, "Images/");
+            var uploadsRootFolder = Path.Combine(_environment.WebRootPath, "Images/");
             if (!Directory.Exists(uploadsRootFolder))
             {
                 Directory.CreateDirectory(uploadsRootFolder);
             }
 
             var fName = userId + postedFileExtension;
-            var uploadsAvatar = Path.Combine(_environment.ContentRootPath, "Images/" + fName);
+            var uploadsAvatar = Path.Combine(_environment.WebRootPath, "Images/" + fName);
 
             await using var stream = new FileStream(uploadsAvatar, FileMode.Create);
             await file.CopyToAsync(stream);
@@ -286,17 +284,24 @@ public class AccountController : ControllerBase
         }
     }
 
-    private static string GetAvatar(string userId)
+    private static string GetAvatar(string userId, string basePath)
     {
-        if (string.IsNullOrEmpty(userId))
+        try
+        {
+            if (string.IsNullOrEmpty(userId))
+            {
+                return string.Empty;
+            }
+
+            var pathToRead = Path.Combine(basePath, "Images");
+            var photos = Directory
+                .EnumerateFiles(pathToRead).FirstOrDefault(x => x.Contains(userId));
+            return photos ?? string.Empty;
+        }
+        catch (Exception e)
         {
             return string.Empty;
         }
-
-        var pathToRead = Path.Combine(Directory.GetCurrentDirectory(), "Images");
-        var photos = Directory
-            .EnumerateFiles(pathToRead).FirstOrDefault(x => x.Contains(userId));
-        return photos ?? string.Empty;
     }
 
     #endregion

@@ -9,10 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FoodAppServer.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    [Authorize]
-    public class OrderController : ControllerBase
+    public class OrderController : AuthAPIController
     {
         private readonly ApplicationDbContext _context;
 

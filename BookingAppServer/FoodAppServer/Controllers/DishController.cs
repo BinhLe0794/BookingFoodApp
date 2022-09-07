@@ -3,14 +3,13 @@ using ApplicationServices.Models.Common;
 using ApplicationServices.Models.Enums;
 using ApplicationServices.Models.Menu;
 using FoodAppServer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoodAppServer.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class DishController : ControllerBase
+    public class DishController : AuthAPIController
     {
         private readonly ApplicationDbContext _context;
 
@@ -66,6 +65,7 @@ namespace FoodAppServer.Controllers
         }
 
         [HttpGet("categories")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetCategories()
         {
             try
@@ -106,6 +106,7 @@ namespace FoodAppServer.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetDishByCategories([FromQuery] string category)
         {
             try
@@ -136,6 +137,7 @@ namespace FoodAppServer.Controllers
         }
 
         [HttpGet("/api/dishes")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetDishByCategories()
         {
             try
