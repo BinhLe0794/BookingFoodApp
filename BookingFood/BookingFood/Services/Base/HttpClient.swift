@@ -51,7 +51,7 @@ struct HttpClient {
                 if let data = data {
                     result = .success(data)
                     let responseString = String(data: data, encoding: .utf8) ?? "Could not stringify data"
-                    print("responseRAW: \(responseString)")
+//                    print("responseRAW: \(responseString)")
                 } else if let error = error {
                     result = .failure(error)
                     print("ErrorRAW : \(error.localizedDescription)")
@@ -96,7 +96,7 @@ struct HttpClient {
             
         
             if let decodedData = response?.resultObj {
-                print("decoded_resultObj >>>>: \(decodedData)")
+//                print("decoded_resultObj >>>>: \(decodedData)")
                 
                 completion(.success(decodedData))
             } else {
