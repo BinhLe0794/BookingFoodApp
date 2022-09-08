@@ -41,7 +41,7 @@ class AccountVC: UIViewController {
         if !isLogin {
             pushToLogin()
         }
-        imgAvatar.makeRounded()
+//        imgAvatar.makeRounded()
     }
 
     override func viewDidAppear(_ animated: Bool) {

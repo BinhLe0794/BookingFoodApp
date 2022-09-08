@@ -47,6 +47,9 @@ class LoginVC: UIViewController {
       
     }
     
+    @IBAction func btnForget_Clicked(_ sender: Any) {
+        ProgressHUD.showError("Let's Contact with the Admin")
+    }
     
     @IBAction func btnLogin_Clicked(_ sender: Any) {
         ProgressHUD.show()

@@ -53,19 +53,10 @@ class CartVC: UIViewController {
             lbSubTotal.text = total.toCurrency()
         }
     }
-
-
-    @IBAction func btn_Checkout_Clicked(_ sender: Any) {
-        
-        guard let user = UserDefaults.standard.getCurrentUser() else {
-            ProgressHUD.showError("Let's login")
-            return
-        }
-        
+    private func Checkout(user: UserVm){
         loadCart()
-        
         let request = CheckoutRequest(userId: user.id, details: dishCarts)
-        print(request)
+//        print(request)
         OrderService.shared.checkoutCart(request) { apiResult in
             switch apiResult {
             case .success(_):
@@ -77,6 +68,18 @@ class CartVC: UIViewController {
                 print("\(error.localizedDescription)")
             }
         }
+    }
+
+    @IBAction func btn_Checkout_Clicked(_ sender: Any) {
+        
+        guard let currentUser = UserDefaults.standard.getCurrentUser() else {
+            ProgressHUD.showError("Let's login")
+            return
+        }
+        let resultCheckout = AlertComponent().AlertConfirmation(title: "Information", message: "Are you sure to order this?") { [self] action in
+            Checkout(user: currentUser)
+        }
+        self.present(resultCheckout, animated: true)
 
     }
 }
