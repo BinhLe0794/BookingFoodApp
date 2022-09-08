@@ -1,0 +1,96 @@
+@model List<AccountVm>
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "_Layout";
+}
+
+
+<div class="card">
+    <table class="table" id="data-table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Avatar</th>
+            <th>Fullname</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>
+                    <img class="rounded float-left" width="200rem" height="150rem" src="~/@user.Avatar" alt="avatar"/>
+                </td>
+                <td>@user.Fullname</td>
+                <td>@user.Email</td>
+                <td>@user.PhoneNumber</td>
+                <td>
+                    <a class="btn btn-primary" asp-action="UserDetail" asp-route-userId="@user.Id">Edit</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts
+{
+    <script type="application/javascript">
+          $(document).ready(function () {
+                            // $("#toggleDetail").click(showSearchInput);
+                            // $("#btn-search").click(RefreshPage);
+                            // $("#keyword").change(RefreshPage);
+             const dataTable = $('#data-table');
+               dataTable.DataTable({
+                  // "order": [[ 2, "desc" ]],
+                  // "columnDefs": [
+                  //     { "visible": false, "targets": [6], "searchable": true }
+                  // ],
+                stateSave:true ,
+                "pageLength": 10,
+                    searchPanes:{
+                              threshold: 1,
+                              layout: "columns-2",
+                                 cascadePanes: true, // no to TOP after click
+                              viewTotal: true,
+                             initCollapsed: true,
+                              columns: [2,3,4],
+                    },
+                  buttons: [                 
+                          {
+                          text: 'Clear',
+                          action: function ( ) {
+                                    // clear state
+                                    let dataTable = $('#data-table');
+                                    let resetTable = dataTable.DataTable();
+                                    resetTable.state.clear();
+                                    // destroy table
+                                    resetTable.destroy();
+                                   window.location.reload();
+                          }
+                      }, 
+                      'excel'
+                      ],
+                  dom: "BPflrtip",
+              //     footerCallback: function (row, data, start, end, display) {
+              //                     let _dataTable = dataTable.DataTable(); 
+              //                     let count =  _dataTable.column(1,{search : "applied"}).data().sum(); 
+              //                     let quantitySum = _dataTable.column(2,{search : "applied"}).data().sum(); 
+              //                     let totalSum = _dataTable.column(3,{search : "applied"}).data().sum(); 
+              //         let pageTotal = _dataTable
+              //             .column(0, {search : "applied"})
+              //             .data().count();
+              //     console.log(`Bản ghi: ${pageTotal}: Số lượng: ${quantitySum} - Tổng: ${totalSum}`);
+              //     // Update footer
+              //     $("#sumInfo").html('Tổng bản ghi: '+numberWithCommas(pageTotal)+ "&emsp;" + 'Số đơn/Số lượng: ' +count+'/'+ numberWithCommas(quantitySum) + ' (' + formatCurrency(totalSum) + ' total)');
+              // },
+              });
+                      
+          }); // end document
+      </script>
+}

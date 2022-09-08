@@ -1,0 +1,112 @@
+@using System.Globalization
+@model System.Collections.Generic.List<ApplicationServices.Models.Menu.OrderDetailVm>
+
+@{
+    ViewBag.Title = "Order Details";
+    Layout = "_Layout";
+}
+
+<h2 class="text-center">Infor of Order : @ViewBag.OrderId</h2>
+
+<div class="card">
+    <table class="table" id="data-table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total Cost</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>
+                    <img class="rounded float-left" width="200rem" height="150rem" src="@order.ImageUrl" alt="logo"/>
+                </td>
+                <td>@order.Category</td>
+                <td>@order.Name</td>
+                <td>@order.Price</td>
+                <td>@order.Quantity.ToString("N0")</td>
+                <td>@order.Total.ToString("C0", CultureInfo.GetCultureInfo("en-us"))</td>
+            </tr>
+        }
+        </tbody>
+              <tfoot>
+              <tr>
+                <th colspan="4" id="sumInfo"></th>
+              </tr>
+              </tfoot>
+    </table>
+</div>
+
+@section Scripts
+{
+    <script type="application/javascript">
+          $(document).ready(function () {
+                            // $("#toggleDetail").click(showSearchInput);
+                            // $("#btn-search").click(RefreshPage);
+                            // $("#keyword").change(RefreshPage);
+             const dataTable = $('#data-table');
+               dataTable.DataTable({
+                  // "order": [[ 2, "desc" ]],
+                  // "columnDefs": [
+                  //     { "visible": false, "targets": [6], "searchable": true }
+                  // ],
+                stateSave:true ,
+                "pageLength": 10,
+                    searchPanes:{
+                              threshold: 1,
+                              layout: "columns-2",
+                                 cascadePanes: true, // no to TOP after click
+                              viewTotal: true,
+                             initCollapsed: true,
+                              columns: [1,2],
+                    },
+                  buttons: [                 
+                          {
+                          text: 'Clear',
+                          action: function ( ) {
+                                    // clear state
+                                    let dataTable = $('#data-table');
+                                    let resetTable = dataTable.DataTable();
+                                    resetTable.state.clear();
+                                    // destroy table
+                                    resetTable.destroy();
+                                   window.location.reload();
+                          }
+                      }, 
+                      'excel'
+                      ],
+                  dom: "BPflrtip",
+                  footerCallback: function (row, data, start, end, display) {
+                                  let _dataTable = dataTable.DataTable(); 
+                                  // let count =  _dataTable.column(0,{search : "applied"}).data().sum(); 
+                                  let quantitySum = _dataTable.column(4,{search : "applied"}).data().sum(); 
+                                  let totalSum = _dataTable.column(5,{search : "applied"}).data().sum(); 
+                  //     let pageTotal = _dataTable
+                  //         .column(0, {search : "applied"})
+                  //         .data().count();
+                  // console.log(`Bản ghi: ${pageTotal}: Số lượng: ${quantitySum} - Tổng: ${totalSum}`);
+                  // Update footer
+                  $("#sumInfo").html('Total: '+ numberWithCommas(quantitySum) + ' (' + formatCurrency(totalSum) + ' total)');
+              },
+              });
+                      
+          }); // end document
+                                 function formatCurrency(total) {
+                                     let neg = false;
+                                     if(total < 0) {
+                                         neg = true;
+                                         total = Math.abs(total);
+                                     }
+                                     return (neg ? "-$" : '$') + parseFloat(total, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+                                 }
+                                 function numberWithCommas(x) {
+                                      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                  }
+      </script>
+}

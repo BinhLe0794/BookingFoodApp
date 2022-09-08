@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - FoodAppServer</title>
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="~/DataTable/datatables.min.css">
 </head>
 <body>
 <header>
@@ -20,9 +20,17 @@
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link text-dark" href="/swagger">API</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-action="GetUsers">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-action="GetDishes">Dishes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-action="GetOrders">Orders</a>
+                    </li>
                 </ul>
                 <partial name="_LoginPartial"/>
             </div>
@@ -42,7 +50,8 @@
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-@await RenderSectionAsync("Scripts", required: false)
+<script src="~/DataTable/datatables.min.js"></script>
+<script src="~/DataTable/API/sum().js"></script>
+@await RenderSectionAsync("Scripts", false)
 </body>
 </html>

@@ -1,0 +1,92 @@
+@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<DishVm>
+
+@{
+    ViewBag.Title = "Menu";
+    Layout = "_Layout";
+}
+<h2 class="text-center">The List of Dish</h2>
+<a class="btn btn-success my-3" asp-controller="Home" asp-action="CreateDish">Create</a>
+<a class="btn btn-dark my-3" asp-action="SeedingDish">Seeding</a>
+<div class="card">
+
+    <table class="table" id="data-table">
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Calories</th>
+            <th>Price</th>
+            <th>Created At</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var dish in Model)
+        {
+            <tr>
+                <td>
+                    <img class="rounded float-left" width="200rem" height="150rem" src="@dish.Image" alt="logo"/>
+                </td>
+                <td>@dish.Category</td>
+                <td>@dish.Name</td>
+                <td>@dish.Description</td>
+                <td>@dish.Calories</td>
+                <td>@dish.Price.ToString("C0", CultureInfo.GetCultureInfo("en-us"))</td>
+                <td>@dish.CreatedAt</td>
+                <td>
+                    <a class="btn btn-primary" asp-action="EditDish" asp-route-dishId="@dish.Id">Edit</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts
+{
+    <script type="application/javascript">
+          $(document).ready(function () {
+                            // $("#toggleDetail").click(showSearchInput);
+                            // $("#btn-search").click(RefreshPage);
+                            // $("#keyword").change(RefreshPage);
+             const dataTable = $('#data-table');
+               dataTable.DataTable({
+                  "order": [[ 6, "desc" ]],
+                  // "columnDefs": [
+                  //     { "visible": false, "targets": [6], "searchable": true }
+                  // ],
+                stateSave:true ,
+                "pageLength": 10,
+                    searchPanes:{
+                              threshold: 1,
+                              layout: "columns-2",
+                                cascadePanes: true, // no to TOP after click
+                              viewTotal: true,
+                             initCollapsed: true,
+                              columns: [1,2],
+                    },
+                  buttons: [                 
+                          {
+                          text: 'Clear',
+                          action: function ( ) {
+                                    // clear state
+                                    let dataTable = $('#data-table');
+                                    let resetTable = dataTable.DataTable();
+                                    resetTable.state.clear();
+                                    // destroy table
+                                    resetTable.destroy();
+                                   window.location.reload();
+                          }
+                      }, 
+                      'excel'
+                      ],
+                  dom: "BPflrtip",
+              });
+                      
+          }); // end document
+      </script>
+}

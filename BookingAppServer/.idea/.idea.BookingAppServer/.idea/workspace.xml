@@ -12,23 +12,559 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebd6ee13-2a29-48fe-a0d3-aaf5e0e30199" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/FoodAppServer/Controllers/AuthAPIController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/CurrentProfile.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/ForgetPassword.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/Login.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/Register.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodAppServer/Views/Shared/_LoginPartial.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/Images/455ef44b-b793-41d1-920b-97858f734b24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/Extensions/Helper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/Models/Admin/OrderViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/CreateDish.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/EditDish.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/GetDishes.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/GetDishesbyCategory.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/GetOrderDetails.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/GetOrders.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/GetOrdersbyUserId.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/GetUsers.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/UserDetail.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/average().js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/column().title().js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/columns().order().js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnAddDataAndDisplay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnAddTr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnColumnIndexToVisible.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnDataUpdate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnDisplayRow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnDisplayStart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnFakeRowspan.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnFilterAll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnFilterClear.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnFilterOnReturn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnFindCellRowIndexes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnFindCellRowNodes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnGetAdjacentTr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnGetColumnData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnGetColumnIndex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnGetHiddenNodes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnGetTd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnGetTds.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnLengthChange.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnMultiFilter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnPagingInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnProcessingIndicator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnReloadAjax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnSetFilteringDelay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnSortNeutral.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnStandingRedraw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/fnVisibleToColumnIndex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/order.neutral().js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/page.jumpToData().js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/processing().js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/row().show().js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/rows().generate().js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/API/sum().js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.bootstrap5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.bootstrap5.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.bulma.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.bulma.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/buttons.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/common.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/css/mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.bootstrap5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.bootstrap5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.bulma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.bulma.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.colVis.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.colVis.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.html5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.html5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.print.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.print.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/buttons.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/dataTables.buttons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Buttons-2.0.1/js/dataTables.buttons.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.bootstrap5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.bootstrap5.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.bulma.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.bulma.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/css/colReorder.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.bootstrap5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.bootstrap5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.bulma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.bulma.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/colReorder.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/dataTables.colReorder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/ColReorder-1.5.5/js/dataTables.colReorder.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.bootstrap5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.bootstrap5.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.bulma.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.bulma.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/dataTables.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/jquery.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/css/jquery.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/images/sort_asc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/images/sort_asc_disabled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/images/sort_both.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/images/sort_desc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/images/sort_desc_disabled.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.bootstrap5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.bootstrap5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.bulma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.bulma.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/dataTables.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/jquery.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DataTables-1.11.3/js/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DateTime-1.1.1/css/dataTables.dateTime.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DateTime-1.1.1/css/dataTables.dateTime.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DateTime-1.1.1/js/dataTables.dateTime.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/DateTime-1.1.1/js/dataTables.dateTime.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.bootstrap5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.bootstrap5.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.bulma.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.bulma.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/css/fixedColumns.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/dataTables.fixedColumns.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/dataTables.fixedColumns.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.bootstrap5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.bootstrap5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.bulma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.bulma.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedColumns-4.0.1/js/fixedColumns.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.bootstrap5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.bootstrap5.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.bulma.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.bulma.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/css/fixedHeader.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/dataTables.fixedHeader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/dataTables.fixedHeader.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.bootstrap5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.bootstrap5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.bulma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.bulma.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/FixedHeader-3.2.0/js/fixedHeader.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/JSZip-2.5.0/jszip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/JSZip-2.5.0/jszip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.bootstrap5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.bootstrap5.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.bulma.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.bulma.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/css/keyTable.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/dataTables.keyTable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/dataTables.keyTable.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.bootstrap5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.bootstrap5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.bulma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.bulma.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/KeyTable-2.6.4/js/keyTable.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.bootstrap5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.bootstrap5.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.bulma.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.bulma.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/css/responsive.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/dataTables.responsive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/dataTables.responsive.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.bootstrap5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.bootstrap5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.bulma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.bulma.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Responsive-2.2.9/js/responsive.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.bootstrap5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.bootstrap5.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.bulma.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.bulma.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/css/rowGroup.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/dataTables.rowGroup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/dataTables.rowGroup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.bootstrap5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.bootstrap5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.bulma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.bulma.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowGroup-1.1.4/js/rowGroup.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.bootstrap5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.bootstrap5.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.bulma.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.bulma.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/css/rowReorder.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/dataTables.rowReorder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/dataTables.rowReorder.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.bootstrap5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.bootstrap5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.bulma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.bulma.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/RowReorder-1.2.8/js/rowReorder.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.bootstrap5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.bootstrap5.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.bulma.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.bulma.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/css/scroller.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/dataTables.scroller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/dataTables.scroller.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.bootstrap5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.bootstrap5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.bulma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.bulma.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Scroller-2.0.5/js/scroller.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.bootstrap5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.bootstrap5.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.bulma.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.bulma.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/css/searchBuilder.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/dataTables.searchBuilder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/dataTables.searchBuilder.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.bootstrap5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.bootstrap5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.bulma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.bulma.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchBuilder-1.3.0/js/searchBuilder.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.bootstrap5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.bootstrap5.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.bulma.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.bulma.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/css/searchPanes.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/dataTables.searchPanes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/dataTables.searchPanes.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.bootstrap5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.bootstrap5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.bulma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.bulma.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/SearchPanes-1.4.0/js/searchPanes.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.bootstrap5.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.bootstrap5.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.bulma.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.bulma.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.dataTables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.jqueryui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.jqueryui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.semanticui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/css/select.semanticui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/dataTables.select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/dataTables.select.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.bootstrap5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.bootstrap5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.bulma.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.bulma.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.foundation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.foundation.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.jqueryui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.jqueryui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.semanticui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/Select-1.3.3/js/select.semanticui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/datatables.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/datatables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/datatables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/datatables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/pdfmake-0.1.36/pdfmake.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/pdfmake-0.1.36/pdfmake.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/DataTable/pdfmake-0.1.36/vfs_fonts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/Images/38c32fe9-7dca-4239-a47d-254307f485ba.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/Images/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookingAppServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookingAppServer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationServices/Entities/Interfaces/SeedData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Entities/Interfaces/SeedData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationServices/Models/Accounts/AccountVm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationServices/Models/Accounts/AccountVm.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FoodAppServer/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Controllers/AccountController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/Controllers/AuthAPIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Controllers/AuthAPIController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FoodAppServer/Controllers/DishController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Controllers/DishController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FoodAppServer/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Controllers/HomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FoodAppServer/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Controllers/OrderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/Extensions/ErrorWrappingMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Extensions/ErrorWrappingMiddleware.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FoodAppServer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FoodAppServer/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodAppServer/Views/Home/Privacy.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/Views/Home/CurrentProfile.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/CurrentProfile.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/Views/Home/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Views/Home/Login.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FoodAppServer/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodAppServer/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/Views/Shared/_Layout.cshtml.css" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Views/Shared/_Layout.cshtml.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/Views/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Views/Shared/_LoginPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Views/_ViewImports.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/bootstrap/dist/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/jquery-validation/dist/additional-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/jquery-validation/dist/additional-methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/jquery-validation/dist/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/jquery-validation/dist/jquery.validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/jquery/dist/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/wwwroot/lib/jquery/dist/jquery.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +579,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/92dafd758da5177718f54ef03bdcac77b45272b6b3b2ede3cf2dd36f4158a0/ApiBehaviorApplicationModelProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9c289e31f3ffc2e499326eb1fbeef9ee3795a2cec159f2ec2935555aabc4f/Lazy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a189637ee62ade5a353f967e8f9214fb749ea16c9375dc6d2b6df37388f81/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bcae882191178c8bf44c9add4cdeffa874a7afe629e3e56e9280f5896e953425/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e0bea4e5f03899efe75dc4dcf582f230702687c5ac6269866345ce4aae5d8a36/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f1462b662824b61f018ff653183f3696177c35163307daae01160a42074ac48/SignInManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -67,13 +604,13 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.2745399",
+    "XThreadsFramesViewSplitterKey": "0.31514084",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "rider.code.cleanup.on.save": "true",
+    "rider.code.cleanup.on.save.only.changed.lines": "true",
     "rider.code.cleanup.on.save.profile": "Built-in: Reformat Code",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -82,7 +619,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.FoodAppServer">
+  <component name="RunManager" selected="Publish to folder.Publish FoodAppServer to folder">
     <configuration name="Publish Backend.Api to folder" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish configuration="Release" delete_existing_files="true" platform="Any CPU" runtime="Portable" target_folder="$PROJECT_DIR$/Backend.Api/bin/Release/net6.0/publish" target_framework="net6.0" uuid_high="2862308978399068957" uuid_low="-8679016564322316881" />
       <method v="2" />
@@ -136,24 +673,8 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration name="FoodAppServer: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/FoodAppServer/FoodAppServer.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
-      <option name="SEND_DEBUG_REQUEST" value="1" />
-      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue=".NET Launch Settings Profile.FoodAppServer" />
-      <item itemvalue=".NET Launch Settings Profile.FoodAppServer: IIS Express" />
       <item itemvalue=".NET Launch Settings Profile.AdminApp" />
       <item itemvalue=".NET Launch Settings Profile.Backend.Api" />
       <item itemvalue="Publish to folder.Publish FoodAppServer to folder" />
@@ -182,7 +703,8 @@
       <workItem from="1662016026363" duration="8394000" />
       <workItem from="1662176988577" duration="40658000" />
       <workItem from="1662436807928" duration="4571000" />
-      <workItem from="1662446251818" duration="12298000" />
+      <workItem from="1662446251818" duration="24629000" />
+      <workItem from="1662530464258" duration="22158000" />
     </task>
     <servers />
   </component>
@@ -567,6 +1089,25 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/FoodAppServer/Controllers/OrderController.cs</url>
+          <line>28</line>
+          <properties documentPath="$PROJECT_DIR$/FoodAppServer/Controllers/OrderController.cs" initialLine="28" containingFunctionPresentation="method 'CheckoutOrder'">
+            <startOffsets>
+              <option value="905" />
+            </startOffsets>
+            <endOffsets>
+              <option value="922" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

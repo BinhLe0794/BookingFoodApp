@@ -1,3 +1,4 @@
+using System.Text;
 using ApplicationServices.Config;
 using ApplicationServices.Entities;
 using FoodAppServer.Extensions;
@@ -36,6 +37,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredUniqueChars = 0; // Số ký tự riêng biệt
 });
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo {Title = "Swagger bigFoot Restaurant", Version = "v1"});
@@ -51,7 +53,7 @@ builder.Services.AddSwaggerGen(c =>
         Scheme = "Bearer"
     });
 
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
             new OpenApiSecurityScheme
@@ -63,7 +65,7 @@ builder.Services.AddSwaggerGen(c =>
                 },
                 Scheme = "oauth2",
                 Name = "Bearer",
-                In = ParameterLocation.Header,
+                In = ParameterLocation.Header
             },
             new List<string>()
         }
@@ -72,7 +74,7 @@ builder.Services.AddSwaggerGen(c =>
 
 var issuer = "https://webapi.food.com.vn";
 var signingKey = "0123456789ABCDEF";
-var signingKeyBytes = System.Text.Encoding.UTF8.GetBytes(signingKey);
+var signingKeyBytes = Encoding.UTF8.GetBytes(signingKey);
 builder.Services.AddAuthentication(options =>
         {
             options.DefaultScheme = "JWT_OR_COOKIE";
@@ -90,7 +92,7 @@ builder.Services.AddAuthentication(options =>
     {
         options.RequireHttpsMetadata = false;
         options.SaveToken = true;
-        options.TokenValidationParameters = new TokenValidationParameters()
+        options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
             ValidIssuer = issuer,
@@ -98,7 +100,7 @@ builder.Services.AddAuthentication(options =>
             ValidAudience = issuer,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ClockSkew = System.TimeSpan.Zero,
+            ClockSkew = TimeSpan.Zero,
             IssuerSigningKey = new SymmetricSecurityKey(signingKeyBytes)
         };
     })
@@ -113,7 +115,7 @@ builder.Services.AddAuthentication(options =>
             return CookieAuthenticationDefaults.AuthenticationScheme;
         };
     });
-;
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession(options => { options.IdleTimeout = TimeSpan.FromMinutes(30); });
 var app = builder.Build();
 
@@ -128,16 +130,20 @@ app.UseSwagger();
 app.UseSwaggerUI();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseErrorWrapping(); // 
-app.UseSession();
+
 app.UseRouting();
 
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    "default",
+    "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+// "DefaultConnection": "Server=203.113.174.12;Database=FoodApp;User ID=huybinh0794;Password=qwe@1234;TrustServerCertificate=True"
+
+// "DefaultConnection": "Server=.;Database=FoodApp;User ID=sa;Password=qwe@1234;TrustServerCertificate=True"

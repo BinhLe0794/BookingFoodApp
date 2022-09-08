@@ -18,23 +18,21 @@ namespace FoodAppServer.Controllers;
 
 public class AccountController : AuthAPIController
 {
+    private readonly IWebHostEnvironment _environment;
+    private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly RoleManager<IdentityRole> _roleManager;
     private readonly SignInManager<Account> _signInManager;
     private readonly UserManager<Account> _userManager;
-    private readonly IWebHostEnvironment _environment;
 
     public AccountController(UserManager<Account> userManager, SignInManager<Account> signInManager,
-        RoleManager<IdentityRole> roleManager, IWebHostEnvironment environment)
+        RoleManager<IdentityRole> roleManager, IWebHostEnvironment environment,
+        IHttpContextAccessor httpContextAccessor)
     {
         _userManager = userManager;
         _roleManager = roleManager;
         _signInManager = signInManager;
         _environment = environment;
-    }
-
-    public class RegisterFileRequest : RegisterRequest
-    {
-        public IFormFile? FileUpload { get; set; }
+        _httpContextAccessor = httpContextAccessor;
     }
 
     [HttpPost("/register")]
@@ -45,16 +43,10 @@ public class AccountController : AuthAPIController
         try
         {
             var user = await _userManager.FindByNameAsync(request.Username);
-            if (user != null)
-            {
-                return BadRequest(new ApiErrorResult<AccountVm>("Already this user"));
-            }
+            if (user != null) return BadRequest(new ApiErrorResult<AccountVm>("Already this user"));
 
             user = await _userManager.FindByEmailAsync(request.Username);
-            if (user != null)
-            {
-                return BadRequest(new ApiErrorResult<AccountVm>("Already this user"));
-            }
+            if (user != null) return BadRequest(new ApiErrorResult<AccountVm>("Already this user"));
 
             var newAccount = new Account
             {
@@ -66,18 +58,12 @@ public class AccountController : AuthAPIController
             };
 
             var result = await _userManager.CreateAsync(newAccount, request.Password);
-            if (!result.Succeeded)
-            {
-                return BadRequest(new ApiErrorResult<AccountVm>("Register Failed"));
-            }
+            if (!result.Succeeded) return BadRequest(new ApiErrorResult<AccountVm>("Register Failed"));
 
             if (request.FileUpload != null)
             {
                 var newUser = await _userManager.FindByNameAsync(newAccount.UserName);
-                if (newUser != null)
-                {
-                    await SaveAvatar(request.FileUpload, newUser.Id);
-                }
+                if (newUser != null) await SaveAvatar(request.FileUpload, newUser.Id);
             }
 
             return Ok(new ApiSuccessResult<AccountVm>(new AccountVm(newAccount)));
@@ -107,14 +93,11 @@ public class AccountController : AuthAPIController
             if (user == null) return BadRequest(new ApiErrorResult<AccountVm>("Invaild Username or Password"));
 
             var signInResult = await _signInManager.PasswordSignInAsync(user, request.Password, false, false);
-            if (!signInResult.Succeeded)
-            {
-                return BadRequest(new ApiErrorResult<AccountVm>("Login Failed"));
-            }
+            if (!signInResult.Succeeded) return BadRequest(new ApiErrorResult<AccountVm>("Login Failed"));
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.Name, user.UserName)
             };
             var token = GenerateAccessToken(claims);
             var refToken = GenerateRefreshToken();
@@ -130,11 +113,13 @@ public class AccountController : AuthAPIController
                 Fullname = user.Fullname,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
+                LastLogin = user.LastLogin.HasValue ? user.LastLogin.Value.ToString() : "",
                 Token = token,
                 RefreshToken = refToken
             };
             var basePath = _environment.WebRootPath;
-            profileUser.Avatar = GetAvatar(user.Id, basePath);
+            var domainName = _httpContextAccessor.HttpContext!.Request.Host.Value;
+            profileUser.Avatar = Helper.GetAvatar(user.Id, basePath, domainName);
             var result = new ApiSuccessResult<AccountVm>(profileUser);
             return Ok(result);
         }
@@ -164,7 +149,7 @@ public class AccountController : AuthAPIController
                 return BadRequest(new ApiErrorResult<TokenApiModel>("RefreshToken has expired"));
             var claims = new[]
             {
-                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.Name, user.UserName)
             };
             var newAccessToken = GenerateAccessToken(claims);
             var newRefreshToken = GenerateRefreshToken();
@@ -204,6 +189,11 @@ public class AccountController : AuthAPIController
         {
             return BadRequest(new ApiException<bool>(e));
         }
+    }
+
+    public class RegisterFileRequest : RegisterRequest
+    {
+        public IFormFile? FileUpload { get; set; }
     }
 
     #region Private function
@@ -260,15 +250,10 @@ public class AccountController : AuthAPIController
                 && !string.Equals(postedFileExtension, ".png", StringComparison.OrdinalIgnoreCase)
                 && !string.Equals(postedFileExtension, ".gif", StringComparison.OrdinalIgnoreCase)
                 && !string.Equals(postedFileExtension, ".jpeg", StringComparison.OrdinalIgnoreCase))
-            {
                 return null;
-            }
 
             var uploadsRootFolder = Path.Combine(_environment.WebRootPath, "Images/");
-            if (!Directory.Exists(uploadsRootFolder))
-            {
-                Directory.CreateDirectory(uploadsRootFolder);
-            }
+            if (!Directory.Exists(uploadsRootFolder)) Directory.CreateDirectory(uploadsRootFolder);
 
             var fName = userId + postedFileExtension;
             var uploadsAvatar = Path.Combine(_environment.WebRootPath, "Images/" + fName);
@@ -281,26 +266,6 @@ public class AccountController : AuthAPIController
         catch
         {
             return null;
-        }
-    }
-
-    private static string GetAvatar(string userId, string basePath)
-    {
-        try
-        {
-            if (string.IsNullOrEmpty(userId))
-            {
-                return string.Empty;
-            }
-
-            var pathToRead = Path.Combine(basePath, "Images");
-            var photos = Directory
-                .EnumerateFiles(pathToRead).FirstOrDefault(x => x.Contains(userId));
-            return photos ?? string.Empty;
-        }
-        catch (Exception e)
-        {
-            return string.Empty;
         }
     }
 

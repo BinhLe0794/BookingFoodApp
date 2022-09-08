@@ -4,11 +4,12 @@ namespace FoodAppServer.Extensions;
 
 public class ErrorWrappingMiddleware
 {
+    private readonly ILogger<ErrorWrappingMiddleware> _logger;
+
     /*
      * Sử dụng để bắt lỗi global
      */
     private readonly RequestDelegate _next;
-    private readonly ILogger<ErrorWrappingMiddleware> _logger;
 
     public ErrorWrappingMiddleware(RequestDelegate next, ILogger<ErrorWrappingMiddleware> logger)
     {
@@ -34,10 +35,7 @@ public class ErrorWrappingMiddleware
             context.Response.ContentType = "application/json";
 
             var response = new ApiErrorResult<bool>("Unknown Error");
-            if (context.Response.StatusCode == 401)
-            {
-                response.Message = "Unauthorized";
-            }
+            if (context.Response.StatusCode == 401) response.Message = "Unauthorized";
 
             await context.Response.WriteAsJsonAsync(response);
         }
