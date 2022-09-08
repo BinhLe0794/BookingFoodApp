@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jAM-6v-57M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-752" y="86"/>
+            <point key="canvasLocation" x="-322" y="325"/>
         </scene>
         <!--Home-->
         <scene sceneID="VuF-G9-CTp">
@@ -1465,7 +1465,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="OMG-LI-2Ug">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="jAM-6v-57M" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeTB" automaticallyAdjustsScrollViewInsets="NO" id="jAM-6v-57M" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jqZ-63-bdT">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -1639,7 +1639,7 @@
         <!--Home-->
         <scene sceneID="mBF-Mj-Pcg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dmw-B1-f49" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavigation" automaticallyAdjustsScrollViewInsets="NO" id="Dmw-B1-f49" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="RTQ-4h-WV2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xxq-37-hOG">
