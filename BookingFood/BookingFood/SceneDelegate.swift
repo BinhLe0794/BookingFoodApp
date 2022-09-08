@@ -22,11 +22,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         var controller : UIViewController!
         
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
         if UserDefaults.standard.isHome {
-            controller = HomeVC.getStoryBoardId()
+            controller = storyboard.instantiateViewController(identifier: "HomeTB") as! UITabBarController
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .flipHorizontal
+            
         } else {
-            controller = SliceVC.getStoryBoardId()
+            controller = storyboard.instantiateViewController(identifier: "SliceVC") as! SliceVC
         }
         
         window?.rootViewController = controller

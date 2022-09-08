@@ -5,12 +5,18 @@
     Layout = "_Layout";
 }
 
-
+<style>
+    .avatar {
+      vertical-align: middle;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+    }
+</style>
 <div class="card">
     <table class="table" id="data-table">
         <thead>
         <tr>
-            <th>Id</th>
             <th>Avatar</th>
             <th>Fullname</th>
             <th>Email</th>
@@ -22,9 +28,8 @@
         @foreach (var user in Model)
         {
             <tr>
-                <td>@user.Id</td>
                 <td>
-                    <img class="rounded float-left" width="200rem" height="150rem" src="~/@user.Avatar" alt="avatar"/>
+                    <img class="rounded float-left avatar" src="~/@user.Avatar" alt="avatar"/>
                 </td>
                 <td>@user.Fullname</td>
                 <td>@user.Email</td>

@@ -30,6 +30,7 @@
                                 <div class="form-outline mb-4">
                                     <label class="form-label">Category</label>
                                     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" asp-for="Category">
+                                        <option value="@CategoryEnums.Common">@CategoryEnums.Common.ToString()</option>
                                         <option value="@CategoryEnums.Breads">@CategoryEnums.Breads.ToString()</option>
                                         <option value="@CategoryEnums.Drinks">@CategoryEnums.Drinks.ToString()</option>
                                         <option value="@CategoryEnums.Sandwiches">@CategoryEnums.Sandwiches.ToString()</option>

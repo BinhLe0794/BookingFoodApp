@@ -301,7 +301,7 @@ public class HomeController : Controller
         };
         await _context.Dishes.AddAsync(dish);
         var result = await _context.SaveChangesAsync();
-        if (result > 0) return RedirectToAction("Index");
+        if (result > 0) return RedirectToAction("GetDishes");
         ModelState.AddModelError("", "Create Failed");
         return View(request);
     }
@@ -347,6 +347,37 @@ public class HomeController : Controller
         if (result > 0) return RedirectToAction("GetDishes");
         ModelState.AddModelError("", "Update Failed");
         return View(request);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> DeleteDish([FromQuery]string dishId)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(dishId))
+            {
+                return BadRequest("dishId is Invalid");
+            }
+
+            var dish = await _context.Dishes.FindAsync(new Guid(dishId));
+            if (dish == null)
+            {
+                return BadRequest("Dish is Invalid");
+            }
+
+            _context.Dishes.Remove(dish);
+            var result = await _context.SaveChangesAsync();
+            if (result <= 0)
+            {
+                return BadRequest("Remove Dish Fail");
+            }
+
+            return Ok("Remove Successfully");
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.InnerException != null ? e.InnerException.Message : e.Message);
+        }
     }
 
     #endregion
@@ -455,5 +486,6 @@ public class HomeController : Controller
                 }).ToListAsync();
         return View(orderDetails);
     }
+
     #endregion
 }

@@ -39,6 +39,13 @@
                 <td>@dish.CreatedAt</td>
                 <td>
                     <a class="btn btn-primary" asp-action="EditDish" asp-route-dishId="@dish.Id">Edit</a>
+                    @if(User.Identity.Name == "huybinh"){
+                        <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                data-id="@dish.Id">
+                            Delete
+                        </button>
+                    }
+
                 </td>
             </tr>
         }
@@ -46,15 +53,32 @@
     </table>
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-2" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">DELETE THE DISH</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure <span class="text-danger">DELETE</span> this one?</p>
+                <span id="course-id"></span>
+            </div>
+            <div class="modal-footer">
+                <button id="btnDelete" type="button" class="btn btn-danger">Xoá</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Huỷ</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
 @section Scripts
 {
     <script type="application/javascript">
           $(document).ready(function () {
-                            // $("#toggleDetail").click(showSearchInput);
-                            // $("#btn-search").click(RefreshPage);
-                            // $("#keyword").change(RefreshPage);
              const dataTable = $('#data-table');
-               dataTable.DataTable({
+              dataTable.DataTable({
                   "order": [[ 6, "desc" ]],
                   // "columnDefs": [
                   //     { "visible": false, "targets": [6], "searchable": true }
@@ -86,7 +110,17 @@
                       ],
                   dom: "BPflrtip",
               });
-                      
+            /// modal delete
+                let exampleModal = document.getElementById('exampleModal')
+                let dishId;
+                exampleModal.addEventListener('show.bs.modal', function (event) {
+                  dishId = event.relatedTarget.getAttribute('data-id');
+                })
+              document.getElementById('btnDelete').onclick = () => {
+                              let url = `/Home/DeleteDish?dishId=${dishId}`;                                
+                                                      $.post(url,null,function(data, status) {
+                                                        location.reload();
+                                                      });}
           }); // end document
       </script>
 }

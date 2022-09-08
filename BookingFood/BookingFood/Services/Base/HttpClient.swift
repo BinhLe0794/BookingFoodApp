@@ -50,7 +50,7 @@ struct HttpClient {
                 // Authorized
                 if let data = data {
                     result = .success(data)
-                    let responseString = String(data: data, encoding: .utf8) ?? "Could not stringify data"
+//                    let responseString = String(data: data, encoding: .utf8) ?? "Could not stringify data"
 //                    print("responseRAW: \(responseString)")
                 } else if let error = error {
                     result = .failure(error)
