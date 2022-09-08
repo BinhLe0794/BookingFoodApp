@@ -1343,8 +1343,8 @@
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iAC-Lo-LXP">
-                                                <rect key="frame" x="23.666666666666657" y="2.6666666666666856" width="364.33333333333337" height="37.333333333333336"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <rect key="frame" x="23.666666666666657" y="4.3333333333333144" width="364.33333333333337" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -1357,9 +1357,9 @@
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gsa-TC-e8y">
-                                                <rect key="frame" x="26.666666666666657" y="2.6666666666666856" width="361.33333333333337" height="37.333333333333336"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <rect key="frame" x="26.666666666666657" y="4.3333333333333712" width="361.33333333333337" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" spellCheckingType="no" textContentType="email"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -1372,9 +1372,9 @@
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZ3-sp-s4B">
-                                                <rect key="frame" x="25.333333333333343" y="2.6666666666666288" width="362.66666666666663" height="37.333333333333336"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <rect key="frame" x="25.333333333333343" y="4.3333333333333144" width="362.66666666666663" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" textContentType="tel"/>
                                             </textField>
                                         </subviews>
                                         <viewLayoutGuide key="safeArea" id="vYi-cU-UcA"/>
@@ -1387,8 +1387,8 @@
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2sw-tR-H5V">
-                                                <rect key="frame" x="23" y="3.3333333333333144" width="365" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <rect key="frame" x="23" y="4.3333333333333144" width="365" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
@@ -1401,8 +1401,8 @@
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R8g-Q6-vgh">
-                                                <rect key="frame" x="23" y="3.3333333333333712" width="365" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <rect key="frame" x="23" y="4.3333333333333712" width="365" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>

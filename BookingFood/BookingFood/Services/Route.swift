@@ -8,7 +8,7 @@
 import Foundation
 
 enum Route {
-    static let baseUrl = "http://localhost:5123"
+    static let baseUrl = "https://phuocthaosolar.com"
 
     case login
     case register

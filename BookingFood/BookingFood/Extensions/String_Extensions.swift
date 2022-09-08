@@ -11,6 +11,21 @@ extension String {
     var toUrl : URL? {
         return URL(string: self)
     }
+    
+    var formattedUrl: URL? {
+        return URL(string: "https://\(self.replaceCharacters(characters: "\\", toSeparator: "/"))")
+        
+    }
+    func replaceCharacters(characters: String, toSeparator: String) -> String {
+        let characterSet = CharacterSet(charactersIn: characters)
+        let components = components(separatedBy: characterSet)
+        let result = components.joined(separator: toSeparator)
+        return result
+    }
+
+    func wipeCharacters(characters: String) -> String {
+        return self.replaceCharacters(characters: characters, toSeparator: "")
+    }
 }
 
 extension Double {

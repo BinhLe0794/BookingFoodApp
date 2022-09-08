@@ -7,6 +7,7 @@
 
 import UIKit
 import ProgressHUD
+import Kingfisher
 
 class AccountVC: UIViewController {
 
@@ -74,7 +75,7 @@ class AccountVC: UIViewController {
                     
                 case .success(_):
                     print("Logut Success")
-                case .failure(let error):
+                case .failure(_):
                     print("Logout Failed")
                 }
             }
@@ -119,8 +120,9 @@ class AccountVC: UIViewController {
             lbPhone.text = "\(user.phoneNumber)"
             lbOrder.text = "0"
             lbLastOrder.text = "N/A"
-            if let avatar = UIImage(contentsOfFile: user.avatar!) {
-                imgAvatar.image = avatar
+           
+            if let avatar = user.avatar?.formattedUrl {
+                imgAvatar.kf.setImage(with: avatar)
             } else {
                 imgAvatar.image = UIImage(named: "logo")
             }
@@ -128,7 +130,7 @@ class AccountVC: UIViewController {
             lbOr.isHidden = true
             btnRegister.isHidden = true
             btnSignIn.setTitle("Logout", for: .normal)
-            btnSignIn.setTitleColor(.red, for: .normal)shcasdasdssssssssasdasdasdasdsa
+            btnSignIn.setTitleColor(.red, for: .normal)
             btnSignIn.backgroundColor = .darkGray
         }
     }
