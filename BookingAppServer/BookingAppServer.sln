@@ -1,9 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminApp", "AdminApp\AdminApp.csproj", "{2A1CD1E2-F134-4526-8446-10B9D78D247D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Api", "Backend.Api\Backend.Api.csproj", "{27B8F6D9-C6E3-431D-878D-F06B0BD64DAF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationServices", "ApplicationServices\ApplicationServices.csproj", "{39688969-B166-41EC-8D2E-49CC15D9B953}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodAppServer", "FoodAppServer\FoodAppServer.csproj", "{DC692071-FA99-4318-995F-902EC7BB9321}"
@@ -14,14 +10,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2A1CD1E2-F134-4526-8446-10B9D78D247D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A1CD1E2-F134-4526-8446-10B9D78D247D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A1CD1E2-F134-4526-8446-10B9D78D247D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A1CD1E2-F134-4526-8446-10B9D78D247D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{27B8F6D9-C6E3-431D-878D-F06B0BD64DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27B8F6D9-C6E3-431D-878D-F06B0BD64DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27B8F6D9-C6E3-431D-878D-F06B0BD64DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27B8F6D9-C6E3-431D-878D-F06B0BD64DAF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{39688969-B166-41EC-8D2E-49CC15D9B953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{39688969-B166-41EC-8D2E-49CC15D9B953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39688969-B166-41EC-8D2E-49CC15D9B953}.Release|Any CPU.ActiveCfg = Release|Any CPU

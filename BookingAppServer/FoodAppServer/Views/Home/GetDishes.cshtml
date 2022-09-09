@@ -39,7 +39,7 @@
                 <td>@dish.CreatedAt</td>
                 <td>
                     <a class="btn btn-primary" asp-action="EditDish" asp-route-dishId="@dish.Id">Edit</a>
-                    @if(User.Identity.Name == "huybinh"){
+                    @if(User.Identity?.Name == "huybinh"){
                         <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
                                 data-id="@dish.Id">
                             Delete
