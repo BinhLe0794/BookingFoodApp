@@ -12,14 +12,17 @@ class CategoryListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     @IBOutlet var searchBar: UISearchBar!
+    
     var categoryName: String = "Burgers"
-    var categories: [DishVm] = [
-//        .init(id: "1", name: "Burgers", description: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80", category: "asdsadasdas", image: "Burgers", calories: 22, price: 250, cartId: nil)
-    ]
+    var categories: [DishVm] = []
 
+    var searching = false
+    var searchList: [DishVm] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
+        self.searchBar.delegate = self
         DishService.shared.fetchCategoriesbyId(categoryName) { [self] apiResult in
             switch apiResult {
             case .success(let data):
@@ -45,16 +48,42 @@ class CategoryListVC: UIViewController {
 
 }
 
+extension CategoryListVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchList = categories.filter { $0.name.lowercased().prefix(searchText.count) == searchText.lowercased() }
+        searching = true
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchBar.text = ""
+        tableView.reloadData()
+    }
+}
+
 extension CategoryListVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        switch searching {
+    
+        case true:
+            return searchList.count
+        case false:
+            return categories.count
+        }
     }
 
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DishCell.identifier, for: indexPath) as! DishCell
-        cell.setup(categoryDishes: categories[indexPath.row])
+        switch searching {
+    
+        case true:
+            cell.setup(categoryDishes: searchList[indexPath.row])
+        case false:
+            cell.setup(categoryDishes: categories[indexPath.row])
+        }
         return cell
     }
 
