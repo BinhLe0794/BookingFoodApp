@@ -51,6 +51,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func btnForget_Clicked(_ sender: Any) {
+        UserDefaults.standard.isHome = false
         ProgressHUD.showError("Let's Contact with the Admin")
     }
     

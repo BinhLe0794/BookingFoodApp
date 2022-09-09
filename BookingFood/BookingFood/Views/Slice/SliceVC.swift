@@ -38,7 +38,6 @@ class SliceVC: UIViewController {
     }
 
     @IBAction func btnNext_Clicked(_ sender: Any) {
-        pageControl.currentPage = _currentPage
         if _currentPage == slices.count - 1 {
             //move to next page
             let navigation = storyboard?.instantiateViewController(withIdentifier: "HomeTB") as! UITabBarController
