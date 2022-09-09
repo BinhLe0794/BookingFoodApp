@@ -30,8 +30,12 @@ public class DishController : AuthAPIController
                 Name = x.Key.ToString(),
                 Image = Helper.GetImageCategory(x.Key)
             }).ToListAsync();
-
-            result.Populars = await _context.Dishes.Take(5).Select(x => new DishVm
+            var random = new Random();
+            var maxDish = await _context.Dishes.CountAsync();
+            result.Populars = await _context.Dishes.Where(x=>!x.Name.Contains("Special"))
+                .Skip(random.Next(0,maxDish - 1))
+                .Take(5)
+                .Select(x => new DishVm
             {
                 Id = x.Id.ToString(),
                 Name = x.Name,
@@ -41,7 +45,9 @@ public class DishController : AuthAPIController
                 Image = x.ImageUrl,
                 Price = x.Price
             }).ToListAsync();
-            result.Specials = await _context.Dishes.Where(x => x.Name.Contains("Special")).Select(x => new DishVm
+            result.Specials = await _context.Dishes.Where(x => x.Name.Contains("Special"))
+                .OrderBy(x=>x.Name)
+                .Select(x => new DishVm
             {
                 Id = x.Id.ToString(),
                 Name = x.Name,

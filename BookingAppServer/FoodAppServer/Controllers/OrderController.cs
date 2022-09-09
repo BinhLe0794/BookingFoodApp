@@ -77,7 +77,7 @@ public class OrderController : AuthAPIController
                 {
                     Id = x.Id.ToString(),
                     OrderDetails = new List<OrderDetailVm>(),
-                    CreatedAt = x.CreatedAt.ToShortDateString()
+                    CreatedAt = x.CreatedAt.ToString("yyy-MMM-dd hh:mm:ss")
                 }).ToListAsync();
             //QUERY ORDER DETAILS
             foreach (var order in orders)

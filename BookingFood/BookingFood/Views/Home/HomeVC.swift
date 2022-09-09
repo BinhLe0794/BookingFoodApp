@@ -54,7 +54,7 @@ class HomeVC: UIViewController {
                 categories = data.categories!
                 populars = data.populars!
                 special = data.specials!
-                categories.append(CategoryVm(name: "All", image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"))
+                categories.append(CategoryVm(name: "All", image: "https://thumbs.dreamstime.com/z/tasty-fast-food-vector-isolated-delicious-burger-tasty-fast-food-vector-isolated-delicious-burger-french-fries-chicken-legs-174797432.jpg"))
                 DispatchQueue.main.async { [self] in
                     reloadCollection()
                 }

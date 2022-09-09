@@ -113,7 +113,7 @@ public class AccountController : AuthAPIController
                 Fullname = user.Fullname,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
-                LastLogin = user.LastLogin.HasValue ? user.LastLogin.Value.ToString() : "",
+                LastLogin = user.LastLogin.HasValue ? user.LastLogin.Value.ToString("yyy-MMM-dd hh:mm:ss") : "N/A",
                 Token = token,
                 RefreshToken = refToken
             };

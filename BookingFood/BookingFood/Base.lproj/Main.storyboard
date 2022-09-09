@@ -986,7 +986,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ETi-Zv-wWD">
                                         <rect key="frame" x="0.0" y="161.33333333333331" width="231" height="20.333333333333343"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Order:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jlp-qv-si0">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Login:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jlp-qv-si0">
                                                 <rect key="frame" x="0.0" y="0.0" width="117.66666666666667" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -1306,17 +1306,17 @@
             <objects>
                 <viewController storyboardIdentifier="RegisterVC" id="BUr-PM-dJj" customClass="RegisterVC" customModule="BookingFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZFl-Nz-U0w">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slide1" translatesAutoresizingMaskIntoConstraints="NO" id="6hA-x9-Xrs">
-                                <rect key="frame" x="52.666666666666657" y="74" width="322.66666666666674" height="322.66666666666669"/>
+                                <rect key="frame" x="138.66666666666666" y="118" width="150.99999999999997" height="151"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6hA-x9-Xrs" secondAttribute="height" multiplier="1:1" id="liX-Xh-bsq"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PdH-xm-ef4" userLabel="Input Stack View">
-                                <rect key="frame" x="20" y="416.66666666666669" width="388" height="251.66666666666669"/>
+                                <rect key="frame" x="20" y="289" width="388" height="251.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JU4-ya-5g9">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="42.333333333333336"/>
@@ -1326,7 +1326,7 @@
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iAC-Lo-LXP">
-                                                <rect key="frame" x="23.666666666666657" y="4.3333333333333428" width="364.33333333333337" height="34"/>
+                                                <rect key="frame" x="23.666666666666657" y="4.3333333333333144" width="364.33333333333337" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1393,7 +1393,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4U-Rp-6JX">
-                                <rect key="frame" x="142.66666666666669" y="841" width="142.66666666666669" height="50"/>
+                                <rect key="frame" x="142.66666666666669" y="713.33333333333337" width="142.66666666666669" height="50"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8mb-MH-xVX"/>
@@ -1412,7 +1412,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.fill.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3Ku-sF-eMG">
-                                <rect key="frame" x="141" y="679" width="144.33333333333331" height="141.66666666666663"/>
+                                <rect key="frame" x="141" y="551.33333333333326" width="144.33333333333331" height="141.66666666666669"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
@@ -1677,7 +1677,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lim-ZX-Oe9"/>
+        <segue reference="lQK-PF-lRy"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>

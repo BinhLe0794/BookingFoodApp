@@ -10,7 +10,7 @@ import UIKit
 
 struct UserVm: Codable {
     let id,fullname,email,phoneNumber: String
-    var avatar, token, refreshToken: String?
+    var avatar, token, refreshToken,lastLogin: String?
 }
 struct TokenVm: Codable {
     let accessToken,refreshToken: String

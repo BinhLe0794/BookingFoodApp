@@ -119,7 +119,7 @@ class AccountVC: UIViewController {
             lbEmail.text = "\(user.email)"
             lbPhone.text = "\(user.phoneNumber)"
             lbOrder.text = "0"
-            lbLastOrder.text = "N/A"
+            lbLastOrder.text = "\(user.lastLogin ?? "N/A")"
            
             if let avatar = user.avatar?.formattedUrl {
                 imgAvatar.kf.setImage(with: avatar)
