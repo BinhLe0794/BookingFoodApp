@@ -64,7 +64,6 @@ public class DishController : AuthAPIController
             return BadRequest(new ApiException<bool>(e));
         }
     }
-
     [HttpGet]
     [AllowAnonymous]
     public async Task<IActionResult> GetDishByCategories([FromQuery] string category)
