@@ -13,8 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ebd6ee13-2a29-48fe-a0d3-aaf5e0e30199" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BookingAppServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookingAppServer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodAppServer/Controllers/DishController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/Controllers/DishController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodAppServer/FoodAppServer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FoodAppServer/FoodAppServer.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +156,7 @@
       <workItem from="1662530464258" duration="22158000" />
       <workItem from="1662620737119" duration="13716000" />
       <workItem from="1662704835410" duration="193000" />
-      <workItem from="1662705047881" duration="1029000" />
+      <workItem from="1662705047881" duration="3355000" />
     </task>
     <servers />
   </component>
