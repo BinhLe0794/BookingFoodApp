@@ -20,12 +20,13 @@ class DishCell: UITableViewCell {
     @IBOutlet weak var lbDescription: UILabel!
     @IBOutlet weak var lbPrice: UILabel!
     
+    @IBOutlet weak var lbCalories: UILabel!
     func setup(categoryDishes dish: DishVm) {
         
         imgView.kf.setImage(with: dish.image?.toUrl)
         lbName.text = dish.name
         lbDescription.text = dish.description
         lbPrice.text = dish.formattedPrice
-        
+        lbCalories.text = dish.formattedCalories
     }
 }
