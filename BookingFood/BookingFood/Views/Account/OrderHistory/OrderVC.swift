@@ -28,17 +28,16 @@ class OrderVC: UIViewController {
         if checkAuthentication() {
             fetchingData()
         } else {
-            ProgressHUD.showError("Let's login first")
-            orders = []
-            refreshView()
+            let loginController = LoginVC.getStoryBoardId()
+            navigationController?.pushViewController(loginController, animated: true)
         }
             
     }
     private func checkAuthentication() -> Bool {
-        guard (UserDefaults.standard.getCurrentUser() != nil) else {
-            return false
+        if (UserDefaults.standard.getCurrentUser() != nil) {
+            return true
         }
-        return true
+        return false
     }
     private func refreshView() {
         

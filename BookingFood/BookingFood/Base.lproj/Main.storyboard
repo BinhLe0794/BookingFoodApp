@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-322" y="325"/>
+            <point key="canvasLocation" x="-566" y="325"/>
         </scene>
         <!--Home-->
         <scene sceneID="VuF-G9-CTp">
@@ -360,7 +360,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MRB-fh-RdI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MRB-fh-RdI">
                                 <rect key="frame" x="0.0" y="44" width="428" height="848"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="nsv-rV-CTj">
@@ -390,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUg-qA-rTI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="2469"/>
+            <point key="canvasLocation" x="1036" y="2481"/>
         </scene>
         <!--Category ListVC-->
         <scene sceneID="aE5-KO-pg5">
@@ -430,7 +430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3O-XN-vPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222.89719626168224" y="2468.6825053995681"/>
+            <point key="canvasLocation" x="-607" y="2481"/>
         </scene>
         <!--CART-->
         <scene sceneID="Ks3-h4-2FF">
@@ -886,7 +886,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wHE-fU-RGO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3374.2990654205605" y="324.62203023758104"/>
+            <point key="canvasLocation" x="3272" y="325"/>
         </scene>
         <!--AccountVC-->
         <scene sceneID="act-Qn-fh2">
@@ -1098,11 +1098,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olg-2k-GzO">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olg-2k-GzO" userLabel="LogoView">
                                 <rect key="frame" x="0.0" y="44" width="428" height="282.66666666666669"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="591-rt-qRb">
-                                        <rect key="frame" x="144" y="52" width="141" height="129"/>
+                                        <rect key="frame" x="112" y="42" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -1287,6 +1287,7 @@
                         <outlet property="imgTooglePassword" destination="rQv-7G-8f6" id="nTO-D4-jYp"/>
                         <outlet property="inputStackView" destination="z6r-zM-lk4" id="kcr-eM-ZQl"/>
                         <outlet property="lbErrorMessage" destination="8W2-Qv-4oN" id="CHA-N9-6tv"/>
+                        <outlet property="logoView" destination="olg-2k-GzO" id="Ptx-G9-eD0"/>
                         <outlet property="txtPassword" destination="mrc-oX-UDx" id="xB1-n5-F3y"/>
                         <outlet property="txtUsername" destination="vH3-i8-CDx" id="MHk-M9-UXx"/>
                     </connections>
@@ -1298,7 +1299,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4628.9719626168226" y="683.58531317494601"/>
+            <point key="canvasLocation" x="3658.8785046728972" y="1034.7732181425486"/>
         </scene>
         <!--REGISTER-->
         <scene sceneID="MKl-2f-oVI">
@@ -1460,7 +1461,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3728.9719626168221" y="1374.2980561555078"/>
+            <point key="canvasLocation" x="3272" y="1803"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OMG-LI-2Ug">

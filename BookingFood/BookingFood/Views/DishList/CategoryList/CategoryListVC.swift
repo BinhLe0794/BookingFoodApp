@@ -21,21 +21,16 @@ class CategoryListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCell()
+        
+        
         self.searchBar.delegate = self
-        DishService.shared.fetchCategoriesbyId(categoryName) { [self] apiResult in
-            switch apiResult {
-            case .success(let data):
-                print("data>>>>>>>>: \(data)")
-                categories = data
-                DispatchQueue.main.async { [self] in
-                    tableView.reloadData()
-                }
-            case .failure(let error):
-                print("error: \(error.localizedDescription)")
-            }
-
-        }
+        
+        registerCell()
+        fetchingData()
+        
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(fetchingData), for: .valueChanged)
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -45,7 +40,21 @@ class CategoryListVC: UIViewController {
     private func registerCell() {
         tableView.register(UINib(nibName: DishCell.identifier, bundle: nil), forCellReuseIdentifier: DishCell.identifier)
     }
+    @objc private func fetchingData() {
+        DishService.shared.fetchCategoriesbyId(categoryName) { [self] apiResult in
+            switch apiResult {
+            case .success(let data):
+                categories = data
+                DispatchQueue.main.async { [self] in
+                    tableView.reloadData()
+                    self.tableView.refreshControl?.endRefreshing()
+                }
+            case .failure(let error):
+                print("error: \(error.localizedDescription)")
+            }
 
+        }
+    }
 }
 
 extension CategoryListVC: UISearchBarDelegate {

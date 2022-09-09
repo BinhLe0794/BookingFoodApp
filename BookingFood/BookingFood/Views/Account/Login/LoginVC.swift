@@ -11,6 +11,7 @@ class LoginVC: UIViewController {
 
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var inputStackView: UIStackView!
+    @IBOutlet weak var logoView: UIView!
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var lbErrorMessage: UILabel!
@@ -25,15 +26,17 @@ class LoginVC: UIViewController {
     }
     
     private func animationLogo() {
+        
         let mainWidth = view.frame.width
-//        let mainHeight = view.frame.height
-        let sizeLogo = inputStackView.frame.origin.y / 2
+        
+        let sizeLogo = logoView.frame.height/1.4
 
         imgLogo.frame.size = .init(width: sizeLogo, height: sizeLogo)
+        
         imgLogo.frame.origin = .init(x: mainWidth / 2 - self.imgLogo.frame.width / 2, y: 0 - self.imgLogo.frame.height)
 
         UIView.animate(withDuration: 2) { [self] in
-            imgLogo.frame.origin.y = inputStackView.frame.origin.y - imgLogo.frame.size.height * 2
+            imgLogo.frame.origin.y = logoView.frame.height/2 - imgLogo.frame.height/2
         }
     }
 

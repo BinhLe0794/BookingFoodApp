@@ -23,18 +23,21 @@ class FullDishListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "All Dishes"
+        
         self.searchBar.delegate = self
+        
         registerCell()
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         fetchingData()
+        
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(fetchingData), for: .valueChanged)
     }
     
     private func registerCell(){
         tableView.register(UINib(nibName: DishCell.identifier, bundle: nil), forCellReuseIdentifier: DishCell.identifier)
     }
-    private func fetchingData() {
+    
+    @objc private func fetchingData() {
         ProgressHUD.show()
         DishService.shared.fetchDishes { [self] apiResult in
             ProgressHUD.dismiss()
@@ -43,6 +46,7 @@ class FullDishListVC: UIViewController {
                 categories = data
                 DispatchQueue.main.async { [self] in
                     tableView.reloadData()
+                    self.tableView.refreshControl?.endRefreshing()
                 }
             case .failure(let error):
                 print("\(error.localizedDescription)")
